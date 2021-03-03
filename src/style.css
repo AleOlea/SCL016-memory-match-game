@@ -1,0 +1,210 @@
+body {
+    margin: 2px;
+    padding: 0;
+    width: auto;
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    background-image: url("./images/nature.png");
+    font-family: "Chau Philomene One";
+    font-size: 12px;
+    border: 8px solid yellow;
+}
+
+header {
+    display: flex;
+    flex-flow: row;
+    color: #FFCC03;
+    text-emphasis: strong;
+    font-size: 40px;
+    margin-left: 20px;
+    width: auto;
+    height: 30%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.memory-cards {
+    display: flex;
+    order: 0;
+    width: 1200px;
+    height: 700px;
+    border: 3px solid red;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-evenly;
+    align-items: stretch;
+    flex-grow: 1;
+    margin: auto;
+    /*
+transform-style: preserve-3d;
+transition: transform .5s;*/
+}
+
+ :after,
+ :before {
+    box-sizing: border-box;
+}
+
+#startGame {
+    display: flex;
+    border: 4px solid yellow;
+    background-color: white;
+    color: red;
+    width: 300px;
+    height: 100px;
+    font-size: 1em;
+    justify-content: center;
+    align-self: center;
+    cursor: pointer;
+}
+
+#timer {
+    border: 2px solid yellow;
+    width: 250px;
+    height: 100px;
+    /* background-image: url(timeclock.png);
+    background-size: 15%;
+    background-repeat: no-repeat;*/
+    background-color: yellow;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    justify-self: center;
+    margin-right: 200px;
+}
+
+#scores {
+    border: 2px solid yellow;
+    width: 250px;
+    height: 100px;
+    background-color: fuchsia;
+    justify-content: center;
+    position: absolute;
+    left: 45%;
+    top: 1300px;
+    font-size: 2em;
+}
+
+card {
+    width: 180px;
+    height: 180px;
+    background-image: url("./images/ball.png");
+    background-size: cover;
+    margin: 10px;
+    font-size: 1rem;
+    position: relative;
+    transform: scale 1;
+    cursor: pointer;
+}
+
+card:active {
+    background: #96a1b8;
+}
+
+
+/*   ------OJO CAMBIO MEDIA */
+
+@media (max-width:600px) {
+    body {
+        margin: 2px;
+        padding: 0;
+        width: auto;
+        height: 100vh;
+        box-sizing: border-box;
+        background-image: url("../nature.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-family: "Chau Philomene One";
+        font-size: 12px;
+        border: 8px solid fuchsia;
+    }
+    header {
+        display: flex;
+        flex-flow: row;
+        color: #FFCC03;
+        text-emphasis: strong;
+        font-size: 12px;
+        justify-content: space-evenly;
+        width: auto;
+        height: 20%;
+        /*justify-content: space-between;*/
+    }
+    h1 {
+        position: absolute;
+        left: 15%;
+        top: 2%;
+    }
+    .memory-cards {
+        display: flex;
+        order: 0;
+        width: 65%;
+        height: 65%;
+        border: 3px solid red;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: space-evenly;
+        align-items: stretch;
+        flex-grow: 1;
+        margin: auto;
+        /*
+transform-style: preserve-3d;
+transition: transform .5s;*/
+    }
+     :after,
+     :before {
+        box-sizing: border-box;
+    }
+    #startGame {
+        display: flex;
+        border: 4px solid yellow;
+        background-color: white;
+        color: red;
+        width: 60px;
+        height: 30px;
+        font-size: 1em;
+        justify-content: center;
+        align-self: center;
+        cursor: pointer;
+    }
+    #timer {
+        border: 2px solid blue;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        /* background-image: url(timeclock.png);
+    background-size: 15%;
+    background-repeat: no-repeat;*/
+        background-color: yellow;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        justify-self: center;
+        margin-right: 20px;
+    }
+    #scores {
+        border: 2px solid yellow;
+        width: 80px;
+        height: 30px;
+        background-color: fuchsia;
+        justify-content: center;
+        position: absolute;
+        left: 50%;
+        top: 620px;
+        font-size: 1em;
+    }
+    card {
+        width: 50px;
+        height: 50px;
+        background-image: url(../ball.png);
+        background-size: cover;
+        margin: 10px;
+        font-size: 1rem;
+        position: relative;
+        transform: scale 1;
+        cursor: pointer;
+    }
+    card:active {
+        background: #96a1b8;
+    }
+}

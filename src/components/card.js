@@ -1,0 +1,1 @@
+//crear tarjeta y exportar a appj.s
