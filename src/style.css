@@ -19,7 +19,7 @@ header {
     font-size: 40px;
     margin-left: 20px;
     width: auto;
-    height: 30%;
+    height: 20%;
     justify-content: space-around;
     align-items: center;
 }
@@ -27,8 +27,8 @@ header {
 .memory-cards {
     display: flex;
     order: 0;
-    width: 1200px;
-    height: 700px;
+    width: 1300px;
+    height: 900px;
     border: 3px solid red;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -74,7 +74,7 @@ transition: transform .5s;*/
     margin-right: 200px;
 }
 
-#scores {
+#score {
     border: 2px solid yellow;
     width: 250px;
     height: 100px;
@@ -89,13 +89,14 @@ transition: transform .5s;*/
 card {
     width: 180px;
     height: 180px;
-    background-image: url("./");
+    background-image: url("images/ball.png");
     background-size: cover;
     margin: 10px;
     font-size: 1rem;
     position: relative;
     transform: scale 1;
     cursor: pointer;
+    border: 2px solid red;
 }
 
 card:active {
@@ -112,7 +113,7 @@ card:active {
         width: auto;
         height: 100vh;
         box-sizing: border-box;
-        background-image: url("../nature.png");
+        background-image: url("images/nature.png");
         background-size: cover;
         background-repeat: no-repeat;
         font-family: "Chau Philomene One";
@@ -196,7 +197,7 @@ transition: transform .5s;*/
     card {
         width: 50px;
         height: 50px;
-        background-image: url(../ball.png);
+        background-image: url("images/ball.png");
         background-size: cover;
         margin: 10px;
         font-size: 1rem;
