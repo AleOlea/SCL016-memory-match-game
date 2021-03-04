@@ -3,6 +3,10 @@ console.log(pokemon);
 
 let dataPokemon = pokemon.items;
 
+
+
+/*import casa from "./card.js"*/
+
 // Para incluir los diferentes sets de cartas podemos _importar_ el archivo
 // JavasSript que contenga el `export` correspondiente...
 //
@@ -19,21 +23,47 @@ let dataPokemon = pokemon.items;
 //
 
 
-//comienzo sugerido de la funcion???
+//NO ESTA FUNCIONANDO NO ESTA AGREGANBDO LAS CARTAS DESDE JAVA.
 
 const App = () => {
-    const el = document.createElement('div');
-    el.className = "App";
-    el.textContent = "pokebolas";
-    const cards = document.createElement("card")
-    el.appendChild(cards);
-    cards.class = "pokecard";
+
+
+    const header = document.createElement("header");
+    document.body.appendChild(header);
+
+
+    const logo = document.createElement("h1");
+    document.body.appendChild(logo);
+    header.innerHTML = "atrapalos ya!"
+
+    const startGameBox = document.createElement("box");
+    startGameBox.id = "startGame";
+    document.body.appendChild(startGameBox);
+
+
+    const el = document.createElement("div");
+    el.className = "memory-cards";
+    document.body.appendChild(el);
+
+
+
+    const cards = document.createElement("card");
+    /*cards.className = "pokecards"*/
+    document.body.appendChild(cards)
+    for (let i = 0; i < 19; i++) {
+        console.log(i)
+    }
+
+
+
 
 
 }
 
 
 
+
+/*
 const pokeNames = ["bulbasaur", "ivysaur", "venusaur", "charmander", "charmeleon", "charizard", "squirtle",
     "wartortle", "blastoise", "bulbasaur", "ivysaur", "venusaur", "charmander", "charmeleon", "charizard", "squirtle", "wartortle", "blastoise"
 ]
@@ -93,6 +123,7 @@ cards.forEach((card, i) => card.addEventListener("click", function(e) {
     }
 
 }));
+*/
 
 
 export default App;

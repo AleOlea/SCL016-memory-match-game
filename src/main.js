@@ -1,6 +1,8 @@
 import App from './components/App.js';
 
-/*document.getElementById('root').appendChild(App());*/
+//Recomendamos usar src/main.js como punto de entrada de tu aplicación.
 
-//este es mi dom*/
+//document.getElementById('root').appendChild(App());*/
+
+
 App();

@@ -89,7 +89,7 @@ transition: transform .5s;*/
 card {
     width: 180px;
     height: 180px;
-    background-image: url("./images/ball.png");
+    background-image: url("./");
     background-size: cover;
     margin: 10px;
     font-size: 1rem;
