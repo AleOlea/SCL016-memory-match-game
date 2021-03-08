@@ -1,152 +1,37 @@
-body {
-    margin: 2px;
-    padding: 0;
-    width: auto;
-    height: 100vh;
-    width: 100vw;
-    box-sizing: border-box;
-    background-image: url("./images/nature.png");
-    font-family: "Chau Philomene One";
-    font-size: 12px;
-    border: 8px solid yellow;
-}
-
-header {
-    display: flex;
-    flex-flow: row;
-    color: #FFCC03;
-    text-emphasis: strong;
-    font-size: 40px;
-    margin-left: 20px;
-    width: auto;
-    height: 20%;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.memory-cards {
-    display: flex;
-    order: 0;
-    width: 1300px;
-    height: 900px;
-    border: 3px solid red;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-content: space-evenly;
-    align-items: stretch;
-    flex-grow: 1;
-    margin: auto;
-    /*
-transform-style: preserve-3d;
-transition: transform .5s;*/
-}
-
- :after,
- :before {
-    box-sizing: border-box;
-}
-
-#startGame {
-    display: flex;
-    border: 4px solid yellow;
-    background-color: white;
-    color: red;
-    width: 300px;
-    height: 100px;
-    font-size: 1em;
-    justify-content: center;
-    align-self: center;
-    cursor: pointer;
-}
-
-#timer {
-    border: 2px solid yellow;
-    width: 250px;
-    height: 100px;
-    /* background-image: url(timeclock.png);
-    background-size: 15%;
-    background-repeat: no-repeat;*/
-    background-color: yellow;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-    justify-self: center;
-    margin-right: 200px;
-}
-
-#score {
-    border: 2px solid yellow;
-    width: 250px;
-    height: 100px;
-    background-color: fuchsia;
-    justify-content: center;
-    position: absolute;
-    left: 45%;
-    top: 1300px;
-    font-size: 2em;
-}
-
-card {
-    width: 180px;
-    height: 180px;
-    background-image: url("images/ball.png");
-    background-size: cover;
-    margin: 10px;
-    font-size: 1rem;
-    position: relative;
-    transform: scale 1;
-    cursor: pointer;
-    border: 2px solid red;
-}
-
-card:active {
-    background: #96a1b8;
-}
-
-
-/*   ------OJO CAMBIO MEDIA */
-
-@media (max-width:600px) {
+@media (min-width:1025px) and (max-width:3000px) {
     body {
         margin: 2px;
         padding: 0;
-        width: auto;
         height: 100vh;
+        width: 100vw;
         box-sizing: border-box;
-        background-image: url("images/nature.png");
-        background-size: cover;
+        background-image: url("./images/nature.png");
         background-repeat: no-repeat;
+        background-size: cover;
         font-family: "Chau Philomene One";
         font-size: 12px;
-        border: 8px solid fuchsia;
+        border: 8px solid yellow;
     }
     header {
         display: flex;
-        flex-flow: row;
-        color: #FFCC03;
+        color: rgb(240, 232, 10);
         text-emphasis: strong;
-        font-size: 12px;
-        justify-content: space-evenly;
         width: auto;
         height: 20%;
-        /*justify-content: space-between;*/
-    }
-    h1 {
-        position: absolute;
-        left: 15%;
-        top: 2%;
+        align-items: center;
+        justify-content: center;
+        font-size: 4rem;
     }
     .memory-cards {
         display: flex;
         order: 0;
-        width: 65%;
-        height: 65%;
-        border: 3px solid red;
+        width: 60%;
+        height: 60%;
         flex-wrap: wrap;
         justify-content: space-between;
         align-content: space-evenly;
         align-items: stretch;
-        flex-grow: 1;
+        flex-grow: 2;
         margin: auto;
         /*
 transform-style: preserve-3d;
@@ -158,41 +43,174 @@ transition: transform .5s;*/
     }
     #startGame {
         display: flex;
-        border: 4px solid yellow;
-        background-color: white;
-        color: red;
-        width: 60px;
-        height: 30px;
-        font-size: 1em;
+        border: 6px solid black;
+        background-color: hsl(58, 100%, 51%);
+        border-radius: 10%;
+        color: #07164b;
+        font-weight: bolder;
+        width: 12%;
+        height: 6%;
+        font-size: 2.3rem;
+        cursor: pointer;
+        align-items: center;
         justify-content: center;
-        align-self: center;
+        margin-left: 45%;
+        margin-bottom: 10%;
+    }
+    card {
+        width: 220px;
+        height: 220px;
+        background-image: url("images/ball.png");
+        background-size: cover;
+        margin: 10px;
+        font-size: 1rem;
+        position: relative;
+        transform: scale 1;
         cursor: pointer;
     }
-    #timer {
-        border: 2px solid blue;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        /* background-image: url(timeclock.png);
-    background-size: 15%;
-    background-repeat: no-repeat;*/
-        background-color: yellow;
-        justify-content: center;
-        align-items: center;
-        align-self: center;
-        justify-self: center;
-        margin-right: 20px;
+    card:active {
+        background: #96a1b8;
     }
-    #scores {
-        border: 2px solid yellow;
-        width: 80px;
-        height: 30px;
-        background-color: fuchsia;
+    #score {
+        display: flex;
+        border: thick double #2E4595;
+        border-radius: 10%;
+        width: 12%;
+        height: 6%;
+        background-color: whitesmoke;
         justify-content: center;
         position: absolute;
-        left: 50%;
-        top: 620px;
+        right: 5%;
+        top: 20%;
+        font-size: 4em;
+        font-family: 'DotGothic16';
+        align-items: center;
+        justify-content: center;
+    }
+    #timer {
+        display: flex;
+        align-items: top;
+        width: 15%;
+        height: 6%;
+        position: absolute;
+        left: 6%;
+        top: 20%;
+        font-size: 3em;
+    }
+    #displayTime {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: thick double black;
+    }
+    button {
+        width: 85px;
+        height: 35px;
+    }
+    #startTimer {
+        background-color: #8ECE6A;
+    }
+    #stopTimer {
+        background-color: red;
+    }
+    #resetTimer {
+        background-color: #5E8BE8;
+    }
+    footer {
+        display: flex;
+        width: 100%;
+        height: 8%;
+        position: absolute;
+        bottom: 0%;
+        align-items: center;
+        justify-content: center;
         font-size: 1em;
+    }
+}
+
+
+/*   ------OJO CAMBIO MEDIA */
+
+
+/*   ------OJO CAMBIO MEDIA */
+
+
+/*   ------OJO CAMBIO MEDIA */
+
+
+/*   ------OJO CAMBIO MEDIA */
+
+
+/*   ------OJO CAMBIO MEDIA */
+
+
+/*   ------OJO CAMBIO MEDIA */
+
+
+/*@media (min-width:701px) and (max-width:1024px) {*/
+
+@media (max-width:700px) {
+    body {
+        margin: 2px;
+        padding: 0;
+        height: 100vh;
+        width: 100vw;
+        box-sizing: border-box;
+        background-image: url("./images/nature.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: "Chau Philomene One";
+        font-size: 12px;
+        border: 4px solid red;
+    }
+    header {
+        display: flex;
+        flex-flow: row;
+        color: hsl(58, 100%, 51%);
+        text-emphasis: strong;
+        font-size: 1em;
+        width: auto;
+        height: 20%;
+        justify-content: space-between;
+        align-items: center;
+    }
+    h1 {
+        margin-left: 20px;
+    }
+    .memory-cards {
+        display: flex;
+        order: 0;
+        width: 250px;
+        height: 400px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: space-evenly;
+        align-items: stretch;
+        flex-grow: 1;
+        margin: auto;
+        margin-bottom: 10%;
+        /*
+    transform-style: preserve-3d;
+    transition: transform .5s;*/
+    }
+     :after,
+     :before {
+        box-sizing: border-box;
+    }
+    #startGame {
+        display: flex;
+        border: 4px solid hsl(101, 91%, 50%);
+        background-color: hsl(58, 100%, 51%);
+        border-radius: 10%;
+        color: #07164b;
+        font-weight: bolder;
+        width: 25%;
+        height: 5%;
+        font-size: 0.8rem;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        margin-left: 37%;
     }
     card {
         width: 50px;
@@ -207,5 +225,198 @@ transition: transform .5s;*/
     }
     card:active {
         background: #96a1b8;
+    }
+    #score {
+        display: flex;
+        border: thick double #2E4595;
+        border-radius: 10%;
+        width: 20%;
+        height: 5%;
+        background-color: whitesmoke;
+        justify-content: center;
+        position: absolute;
+        margin-left: 5%;
+        top: 83%;
+        font-size: 1em;
+        font-family: 'DotGothic16';
+        align-items: center;
+        justify-content: center;
+    }
+    #timer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        margin-left: 75%;
+        top: 86%;
+        font-size: 1em;
+    }
+    #displayTime {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: thick double black;
+        width: 60px;
+        height: 20px;
+    }
+    button {
+        width: 45px;
+        height: 20px;
+    }
+    #startTimer {
+        background-color: #8ECE6A;
+    }
+    #stopTimer {
+        background-color: red;
+    }
+    #resetTimer {
+        background-color: #5E8BE8;
+    }
+    footer {
+        display: flex;
+        width: 100%;
+        height: 5%;
+        position: absolute;
+        bottom: 0%;
+        align-items: center;
+        justify-content: center;
+        font-size: 1em;
+    }
+}
+
+
+/*   ------OJO CAMBIO MEDIA */
+
+
+/*   ------OJO CAMBIO MEDIA */
+
+
+/*   ------OJO CAMBIO MEDIA */
+
+
+/*   ------OJO CAMBIO MEDIA */
+
+
+/*   ------OJO CAMBIO MEDIA */
+
+
+/*   ------OJO CAMBIO MEDIA */
+
+@media (min-width:701px) and (max-width:1024px) {
+    body {
+        margin: 2px;
+        padding: 0;
+        height: 100vh;
+        width: 100vw;
+        box-sizing: border-box;
+        background-image: url("./images/nature.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: "Chau Philomene One";
+        font-size: 12px;
+        border: 4px solid red;
+    }
+    header {
+        display: flex;
+        flex-flow: row;
+        color: hsl(58, 100%, 51%);
+        text-emphasis: strong;
+        font-size: 1em;
+        width: auto;
+        height: 20%;
+        justify-content: space-between;
+        align-items: center;
+    }
+    h1 {
+        margin-left: 10%;
+    }
+    .memory-cards {
+        display: flex;
+        order: 0;
+        width: 50%;
+        height: 50%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: space-evenly;
+        align-items: stretch;
+        flex-grow: 1;
+        margin: auto;
+        /*
+    transform-style: preserve-3d;
+    transition: transform .5s;*/
+    }
+     :after,
+     :before {
+        box-sizing: border-box;
+    }
+    #startGame {
+        display: flex;
+        background-color: hsl(58, 100%, 51%);
+        border-radius: 10%;
+        box-shadow: 6px 4px 5px #2E4595;
+        color: #07164b;
+        font-weight: bolder;
+        width: 120px;
+        height: 30px;
+        font-size: 0.8rem;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        margin-right: 7%;
+    }
+    card {
+        width: 80px;
+        height: 80px;
+        background-image: url("images/ball.png");
+        background-size: cover;
+        margin: 10px;
+        font-size: 1rem;
+        position: relative;
+        transform: scale 1;
+        cursor: pointer;
+    }
+    card:active {
+        background: #96a1b8;
+    }
+    #score {
+        display: flex;
+        border: thick double #2E4595;
+        border-radius: 10%;
+        width: 100px;
+        height: 30px;
+        background-color: whitesmoke;
+        justify-content: center;
+        position: absolute;
+        left: 25%;
+        top: 85%;
+        font-size: 1em;
+        font-family: 'DotGothic16';
+        align-items: center;
+        justify-content: center;
+    }
+    #timer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: thick double black;
+        background-color: rgb(163, 156, 156);
+        width: 100px;
+        height: 60px;
+        position: absolute;
+        right: 20%;
+        top: 84%;
+        font-size: 1em;
+    }
+    footer {
+        display: flex;
+        width: 100%;
+        height: 5%;
+        position: absolute;
+        bottom: 0%;
+        align-items: center;
+        justify-content: center;
+        font-size: 1em;
     }
 }
