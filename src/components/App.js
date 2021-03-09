@@ -40,8 +40,13 @@ let cards = [];
 //Sums up pairs matched
 let score = 0;
 //Main function where it is added the html elements
+
+//TODO
+//let turns= 0;
+
 const App = () => {
     //creating the HTML
+
     const header = document.createElement("header");
     document.body.appendChild(header);
 
@@ -74,42 +79,42 @@ const App = () => {
     scoreGame.id = "score";
     document.body.appendChild(scoreGame);
 
-    const timer = document.createElement("div");
-    timer.id = "timer";
-    document.body.appendChild(timer);
+    /*const timer = document.createElement("div");
+          timer.id = "timer";
+          document.body.appendChild(timer);
 
-    const controls = document.createElement("div");
-    controls.id = "controls";
-    timer.appendChild(controls);
+          const controls = document.createElement("div");
+          controls.id = "controls";
+          timer.appendChild(controls);
 
-    const startTimer = document.createElement("button");
-    startTimer.id = "startTimer";
-    controls.appendChild(startTimer);
-    startTimer.innerText = "Start";
+          const startTimer = document.createElement("button");
+          startTimer.id = "startTimer";
+          controls.appendChild(startTimer);
+          startTimer.innerText = "Start";
 
-    const stopTimer = document.createElement("button");
-    stopTimer.id = "stopTimer";
-    controls.appendChild(stopTimer);
-    stopTimer.innerText = "Stop";
+          const stopTimer = document.createElement("button");
+          stopTimer.id = "stopTimer";
+          controls.appendChild(stopTimer);
+          stopTimer.innerText = "Stop";
 
-    const resetTimer = document.createElement("button");
-    resetTimer.id = "resetTimer";
-    controls.appendChild(resetTimer);
-    resetTimer.innerText = "Reset";
+          const resetTimer = document.createElement("button");
+          resetTimer.id = "resetTimer";
+          controls.appendChild(resetTimer);
+          resetTimer.innerText = "Reset";
 
-    const displayTime = document.createElement("div");
-    displayTime.id = "displayTime";
-    controls.appendChild(displayTime);
+          const displayTime = document.createElement("div");
+          displayTime.id = "displayTime";
+          controls.appendChild(displayTime);
 
-    const minutes = document.createElement("span");
-    minutes.id = "minutes";
-    displayTime.appendChild(minutes);
-    minutes.innerText = "00:";
+          const minutes = document.createElement("span");
+          minutes.id = "minutes";
+          displayTime.appendChild(minutes);
+          minutes.innerText = "00:";
 
-    const seconds = document.createElement("span");
-    seconds.id = "seconds";
-    displayTime.appendChild(seconds);
-    seconds.innerText = "00";
+          const seconds = document.createElement("span");
+          seconds.id = "seconds";
+          displayTime.appendChild(seconds);
+          seconds.innerText = "00";*/
 
     const footer = document.createElement("footer");
     document.body.appendChild(footer);
@@ -121,54 +126,58 @@ const App = () => {
 
 //This function will be called every time the button PLAY is click it will set the flag called "gameStarted" to true.
 //From this point on we can click on cards and they will turn. And inizializing the cards(shufeling twice but only for the first time).
-
+//argument event listener declare to false in the first variable
 const start = (e) => {
     if (gameStarted) {
+        //executed only second tiime button is clicked, while the text is game on
         initializeCards();
         //timer.startTimer();
         gameStarted = false;
         e.target.innerText = "PLAY";
     } else {
+        //will be executed the first and third whenenerver the text is play
         gameStarted = true;
-        e.target.innerText = "Game On";
+        e.target.innerText = "Game On"; //call the initialize cards
     }
 };
 
-//To suffle cards. if negative result then do  nothing if postive swap the items -0.5 and 0.5
+//To suffle cards
 const shuffle = (items) => {
     items.sort(() => Math.random() - 0.5);
 };
-//first card index is set t o -1, it reshuffles
+//-1 meaans we are not betwen two index, the first card has bot been open yet
 const initializeCards = () => {
     //TODO: reset the timer
     firstCardIndex = -1;
-    updateScore(0);
+    updateScore(0); //calling glogal function defined below
     shuffle(pokeNames);
     pokeNames.forEach((name, index) => {
         console.log(Math.floor(index / 6), index % 6, name);
-        turnCardBack(cards[index]);
+        turnCardBack(cards[index]); //turns all the cards back to a red ball
     });
 };
-//This function is called everytime we click in a card
+//Function called everytime we click in a card.
+//First part is cheching is game started is true if not nothing will happen.  It needs to be true for cards to be clickable.
 const handleCardClick = (e) => {
     if (gameStarted) {
         console.log(e.target.id);
-        let currentCardIndex = e.target.id;
+        let currentCardIndex = e.target.id; //value is the index of the card that is clicked.Here happens the "turning" of the card.
         const imageUrl = dataPokemon.find(
             (item) => item.id === pokeNames[currentCardIndex]
         ).image;
 
         e.target.style.backgroundImage = `url("${imageUrl}")`;
-        //no card has been clicked previously or maybe or it was the last pair and it turned back so the index is restarted
+        //branchig two cases.  dealing with the first card.
         if (firstCardIndex === -1) {
-            firstCardIndex = currentCardIndex;
+            firstCardIndex = currentCardIndex; //first card clicked
         } else {
+            //dealing with the second card. comparing the names
             if (pokeNames[firstCardIndex] === pokeNames[currentCardIndex]) {
                 updateScore(score + 1);
 
                 console.log("Score is:", score);
             } else {
-                //creating a copy of the index lost in the 1500 and calling it old..to use whithin this set time out
+                //turn both cards back
                 const oldFirstCardIndex = firstCardIndex;
 
                 setTimeout(function() {
@@ -188,7 +197,7 @@ const turnCardBack = (card) => {
 
 const updateScore = (newScore) => {
     score = newScore;
-    document.getElementById("score").innerText = score * 100 + " points!";
+    document.getElementById("score").innerText = score * 100 + " points";
 };
 
 export default App;

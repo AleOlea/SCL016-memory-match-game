@@ -20,7 +20,8 @@
         height: 20%;
         align-items: center;
         justify-content: center;
-        font-size: 4rem;
+        font-size: 2.5rem;
+        font-family: "Press Start 2P";
     }
     .memory-cards {
         display: flex;
@@ -47,7 +48,7 @@ transition: transform .5s;*/
         background-color: hsl(58, 100%, 51%);
         border-radius: 10%;
         color: #07164b;
-        font-weight: bolder;
+        font-family: "Press Start 2P";
         width: 12%;
         height: 6%;
         font-size: 2.3rem;
@@ -58,8 +59,8 @@ transition: transform .5s;*/
         margin-bottom: 10%;
     }
     card {
-        width: 220px;
-        height: 220px;
+        /* width: 220px;
+        height: 220px;*/
         background-image: url("images/ball.png");
         background-size: cover;
         margin: 10px;
@@ -82,8 +83,8 @@ transition: transform .5s;*/
         position: absolute;
         right: 5%;
         top: 20%;
-        font-size: 4em;
-        font-family: 'DotGothic16';
+        font-size: 2.8em;
+        font-family: "Press Start 2P";
         align-items: center;
         justify-content: center;
     }
