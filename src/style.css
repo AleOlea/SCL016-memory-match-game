@@ -1,4 +1,4 @@
-@media (min-width:1025px) and (max-width:3000px) {
+@media (min-width:1701px) and (max-width:3000px) {
     body {
         margin: 2px;
         padding: 0;
@@ -32,11 +32,8 @@
         justify-content: space-between;
         align-content: space-evenly;
         align-items: stretch;
-        flex-grow: 2;
+        flex-grow: 1;
         margin: auto;
-        /*
-transform-style: preserve-3d;
-transition: transform .5s;*/
     }
      :after,
      :before {
@@ -49,18 +46,19 @@ transition: transform .5s;*/
         border-radius: 10%;
         color: #07164b;
         font-family: "Press Start 2P";
-        width: 12%;
-        height: 6%;
+        width: 230px;
+        height: 80px;
         font-size: 2.3rem;
         cursor: pointer;
         align-items: center;
         justify-content: center;
+        position: absolute;
         margin-left: 45%;
-        margin-bottom: 10%;
+        margin-bottom: 15%;
     }
     card {
-        /* width: 220px;
-        height: 220px;*/
+        width: 220px;
+        height: 220px;
         background-image: url("images/ball.png");
         background-size: cover;
         margin: 10px;
@@ -69,17 +67,29 @@ transition: transform .5s;*/
         transform: scale 1;
         cursor: pointer;
     }
+    #winner {
+        width: 220px;
+        height: 220px;
+        font-size: 30px;
+    }
+    .pokecards {
+        background-color: whitesmoke;
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        border: 3px solid black;
+        background-size: contain;
+    }
     card:active {
-        background: #96a1b8;
+        background: greenyellow;
     }
     #score {
         display: flex;
-        border: thick double #2E4595;
+        border: thick double black;
         border-radius: 10%;
         width: 12%;
         height: 6%;
         background-color: whitesmoke;
-        justify-content: center;
         position: absolute;
         right: 5%;
         top: 20%;
@@ -87,35 +97,15 @@ transition: transform .5s;*/
         font-family: "Press Start 2P";
         align-items: center;
         justify-content: center;
+        justify-items: center;
     }
     #timer {
-        display: flex;
-        align-items: top;
-        width: 15%;
-        height: 6%;
+        width: 200px;
+        height: 100px;
+        border: 2px solid black;
         position: absolute;
-        left: 6%;
-        top: 20%;
-        font-size: 3em;
-    }
-    #displayTime {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: thick double black;
-    }
-    button {
-        width: 85px;
-        height: 35px;
-    }
-    #startTimer {
-        background-color: #8ECE6A;
-    }
-    #stopTimer {
-        background-color: red;
-    }
-    #resetTimer {
-        background-color: #5E8BE8;
+        font-size: 50px;
+        /* margin-top: 30px;*/
     }
     footer {
         display: flex;
@@ -123,9 +113,9 @@ transition: transform .5s;*/
         height: 8%;
         position: absolute;
         bottom: 0%;
-        align-items: center;
+        align-items: left;
         justify-content: center;
-        font-size: 1em;
+        font-size: 1.5em;
     }
 }
 
@@ -135,24 +125,9 @@ transition: transform .5s;*/
 
 /*   ------OJO CAMBIO MEDIA */
 
-
-/*   ------OJO CAMBIO MEDIA */
-
-
-/*   ------OJO CAMBIO MEDIA */
-
-
-/*   ------OJO CAMBIO MEDIA */
-
-
-/*   ------OJO CAMBIO MEDIA */
-
-
-/*@media (min-width:701px) and (max-width:1024px) {*/
-
 @media (max-width:700px) {
     body {
-        margin: 2px;
+        margin: 0;
         padding: 0;
         height: 100vh;
         width: 100vw;
@@ -160,62 +135,69 @@ transition: transform .5s;*/
         background-image: url("./images/nature.png");
         background-repeat: no-repeat;
         background-size: cover;
-        font-family: "Chau Philomene One";
-        font-size: 12px;
-        border: 4px solid red;
+        font-family: "Press Start 2P";
+        font-size: 10px;
+        border: 1px solid red;
     }
     header {
         display: flex;
-        flex-flow: row;
         color: hsl(58, 100%, 51%);
-        text-emphasis: strong;
         font-size: 1em;
         width: auto;
-        height: 20%;
-        justify-content: space-between;
-        align-items: center;
+        height: 15%;
+        justify-items: center;
+        align-items: top;
+        justify-content: center;
+        margin-top: 5%;
     }
     h1 {
-        margin-left: 20px;
+        font-size: 14px;
+    }
+    #timer {
+        width: 100px;
+        height: 40px;
+        border: 2px solid black;
+        position: absolute;
+        font-size: 16px;
+        margin-top: 60px;
+        /* margin-top: 30px;*/
     }
     .memory-cards {
         display: flex;
-        order: 0;
-        width: 250px;
-        height: 400px;
+        /* order: 0;*/
+        width: 300px;
+        height: 450px;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-content: space-evenly;
         align-items: stretch;
         flex-grow: 1;
         margin: auto;
         margin-bottom: 10%;
-        /*
-    transform-style: preserve-3d;
-    transition: transform .5s;*/
     }
-     :after,
+    /* :after,
      :before {
         box-sizing: border-box;
-    }
+}*/
     #startGame {
         display: flex;
-        border: 4px solid hsl(101, 91%, 50%);
+        border: 2px solid black;
         background-color: hsl(58, 100%, 51%);
         border-radius: 10%;
-        color: #07164b;
-        font-weight: bolder;
-        width: 25%;
-        height: 5%;
-        font-size: 0.8rem;
+        color: black;
+        font-family: "Press Start 2P";
+        width: 100px;
+        height: 30px;
         cursor: pointer;
         align-items: center;
         justify-content: center;
-        margin-left: 37%;
+        position: absolute;
+        margin-top: 10%;
+        margin-left: 39%;
     }
     card {
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
         background-image: url("images/ball.png");
         background-size: cover;
         margin: 10px;
@@ -229,21 +211,21 @@ transition: transform .5s;*/
     }
     #score {
         display: flex;
-        border: thick double #2E4595;
+        border: thick double black;
         border-radius: 10%;
-        width: 20%;
-        height: 5%;
+        width: 100px;
+        height: 30px;
         background-color: whitesmoke;
         justify-content: center;
         position: absolute;
-        margin-left: 5%;
-        top: 83%;
+        margin-left: 35%;
+        top: 10%;
         font-size: 1em;
         font-family: 'DotGothic16';
         align-items: center;
         justify-content: center;
     }
-    #timer {
+    /*#timer {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -274,7 +256,7 @@ transition: transform .5s;*/
     }
     #resetTimer {
         background-color: #5E8BE8;
-    }
+    }*/
     footer {
         display: flex;
         width: 100%;
@@ -299,15 +281,9 @@ transition: transform .5s;*/
 
 /*   ------OJO CAMBIO MEDIA */
 
-
-/*   ------OJO CAMBIO MEDIA */
-
-
-/*   ------OJO CAMBIO MEDIA */
-
-@media (min-width:701px) and (max-width:1024px) {
+@media (min-width:701px) and (max-width:1700px) {
     body {
-        margin: 2px;
+        margin: 0;
         padding: 0;
         height: 100vh;
         width: 100vw;
@@ -315,61 +291,58 @@ transition: transform .5s;*/
         background-image: url("./images/nature.png");
         background-repeat: no-repeat;
         background-size: cover;
-        font-family: "Chau Philomene One";
+        font-family: "Press Start 2P";
         font-size: 12px;
-        border: 4px solid red;
+        border: 1px solid red;
     }
     header {
         display: flex;
-        flex-flow: row;
         color: hsl(58, 100%, 51%);
-        text-emphasis: strong;
-        font-size: 1em;
         width: auto;
-        height: 20%;
-        justify-content: space-between;
-        align-items: center;
+        height: 30%;
+        justify-items: center;
+        align-items: top;
+        justify-content: center;
+        margin-top: 5%;
     }
     h1 {
-        margin-left: 10%;
+        font-size: 2.5em;
     }
     .memory-cards {
         display: flex;
-        order: 0;
-        width: 50%;
-        height: 50%;
+        width: 700px;
+        height: 400px;
         flex-wrap: wrap;
         justify-content: space-between;
         align-content: space-evenly;
         align-items: stretch;
         flex-grow: 1;
         margin: auto;
-        /*
-    transform-style: preserve-3d;
-    transition: transform .5s;*/
+        margin-bottom: 10%;
     }
-     :after,
+    /* :after,
      :before {
         box-sizing: border-box;
-    }
+}*/
     #startGame {
         display: flex;
+        border: 2px solid black;
         background-color: hsl(58, 100%, 51%);
         border-radius: 10%;
-        box-shadow: 6px 4px 5px #2E4595;
-        color: #07164b;
-        font-weight: bolder;
-        width: 120px;
-        height: 30px;
-        font-size: 0.8rem;
+        color: black;
+        font-family: "Press Start 2P";
+        width: 130px;
+        height: 40px;
         cursor: pointer;
         align-items: center;
         justify-content: center;
-        margin-right: 7%;
+        position: absolute;
+        margin-top: -6%;
+        margin-left: 42%;
     }
     card {
-        width: 80px;
-        height: 80px;
+        width: 90px;
+        height: 90px;
         background-image: url("images/ball.png");
         background-size: cover;
         margin: 10px;
@@ -383,33 +356,52 @@ transition: transform .5s;*/
     }
     #score {
         display: flex;
-        border: thick double #2E4595;
+        border: thick double black;
         border-radius: 10%;
-        width: 100px;
-        height: 30px;
+        width: 130px;
+        height: 40px;
         background-color: whitesmoke;
         justify-content: center;
         position: absolute;
-        left: 25%;
-        top: 85%;
+        margin-left: 42%;
+        top: 16%;
         font-size: 1em;
         font-family: 'DotGothic16';
         align-items: center;
         justify-content: center;
     }
-    #timer {
+    /*#timer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        margin-left: 75%;
+        top: 86%;
+        font-size: 1em;
+    }
+    #displayTime {
         display: flex;
         align-items: center;
         justify-content: center;
         border: thick double black;
-        background-color: rgb(163, 156, 156);
-        width: 100px;
-        height: 60px;
-        position: absolute;
-        right: 20%;
-        top: 84%;
-        font-size: 1em;
+        width: 60px;
+        height: 20px;
     }
+    button {
+        width: 45px;
+        height: 20px;
+    }
+    #startTimer {
+        background-color: #8ECE6A;
+    }
+    #stopTimer {
+        background-color: red;
+    }
+    #resetTimer {
+        background-color: #5E8BE8;
+    }*/
     footer {
         display: flex;
         width: 100%;
@@ -417,7 +409,8 @@ transition: transform .5s;*/
         position: absolute;
         bottom: 0%;
         align-items: center;
-        justify-content: center;
+        justify-content: start;
         font-size: 1em;
+        margin-left: 10px;
     }
 }

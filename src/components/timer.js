@@ -1,52 +1,40 @@
-let timer = {};
-let currentTimer = 0,
-    interval = 0,
-    lastUpdateTime = new Date().getTime(),
-    start = document.getElementById("startTimer"),
-    stop = document.getElementById("stopTimer"),
-    reset = document.getElementById("resetTimer"),
-    mins = document.getElementById("minutes"),
-    secs = document.getElementById("seconds");
+const timer = document.createElement("p");
+timer.id = "timer";
+document.body.appendChild(timer);
+timer.innerText = "00:00";
+let time = 0;
+let interval = undefined;
 
-start.addEventListener("click", startTimer);
-stop.addEventListener("click", stopTimer);
-reset.addEventListener("click", resetTimer);
+const startTimer = () => {
+    let startingMinutes = 0;
+    time = startingMinutes * 60;
 
-function pad(n) {
-    return ("00" + n).substr(-2);
-}
+    const countdownEl = document.getElementById("timer");
 
-function update() {
-    let now = new Date().getTime(),
-        dt = now - lastUpdateTime;
+    interval = setInterval(updateCountdown, 1000);
 
-    currentTimer += dt;
+    const twoDigits = (n) => {
+        if (n < 10) {
+            return `0${n}`;
+        }
+        return n;
+    };
 
-    let time = new Date(currentTimer);
-
-    mins.innerHTML = pad(time.getMinutes());
-    secs.innerHTML = pad(time.getSeconds());
-    lastUpdateTime = now;
-}
-
-timer.startTimer = () => {
-    if (!interval) {
-        lastUpdateTime = new Date().getTime();
-        interval = setInterval(update, 1);
+    function updateCountdown() {
+        time++;
+        const minutes = Math.floor(time / 60);
+        let seconds = time % 60;
+        countdownEl.innerHTML = `${twoDigits(minutes)}:${twoDigits(seconds)}`;
     }
 };
-
-timer.stopTimer = () => {
-    clearInterval(interval);
-    interval = 0;
+const stopTimer = (shouldReset = false) => {
+    if (shouldReset) {
+        timer.innerText = "00:00";
+    }
+    if (interval) {
+        clearInterval(interval); // if is not undefined
+    }
+    return time;
 };
 
-timer.resetTimer = () => {
-    stopTimer();
-
-    currentTimer = 0;
-
-    mins.innerHTML = secs.innerHTML = pad(0);
-};
-
-export default timer;
+export { startTimer, stopTimer };
