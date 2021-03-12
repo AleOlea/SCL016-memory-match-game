@@ -1,76 +1,49 @@
-@media (min-width:1701px) and (max-width:3000px) {
-    body {
-        margin: 2px;
-        padding: 0;
-        height: 100vh;
-        width: 100vw;
-        box-sizing: border-box;
-        background-image: url("./images/nature.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        font-family: "Chau Philomene One";
-        font-size: 12px;
-        border: 8px solid yellow;
-    }
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    background-image: url("./images/nature.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Press Start 2P";
+    border: 8px solid yellow;
+}
+
+@media (min-width:1701px) and (max-width:4000px) {
     header {
         display: flex;
         color: rgb(240, 232, 10);
         text-emphasis: strong;
         width: auto;
-        height: 20%;
+        height: 15%;
         align-items: center;
         justify-content: center;
-        font-size: 2.5rem;
+        font-size: 2.3rem;
         font-family: "Press Start 2P";
     }
     .memory-cards {
         display: flex;
         order: 0;
-        width: 60%;
-        height: 60%;
+        width: 1500px;
+        height: 1000px;
         flex-wrap: wrap;
         justify-content: space-between;
         align-content: space-evenly;
-        align-items: stretch;
-        flex-grow: 1;
+        /*align-items: stretch;*/
+        /*flex-grow: 1;*/
         margin: auto;
-    }
-     :after,
-     :before {
-        box-sizing: border-box;
-    }
-    #startGame {
-        display: flex;
-        border: 6px solid black;
-        background-color: hsl(58, 100%, 51%);
-        border-radius: 10%;
-        color: #07164b;
-        font-family: "Press Start 2P";
-        width: 230px;
-        height: 80px;
-        font-size: 2.3rem;
-        cursor: pointer;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        margin-left: 45%;
-        margin-bottom: 15%;
     }
     card {
         width: 220px;
         height: 220px;
         background-image: url("images/ball.png");
         background-size: cover;
-        margin: 10px;
+        /*margin: 10px;*/
         font-size: 1rem;
         position: relative;
-        transform: scale 1;
         cursor: pointer;
-    }
-    #winner {
-        width: 220px;
-        height: 220px;
-        font-size: 30px;
     }
     .pokecards {
         background-color: whitesmoke;
@@ -81,36 +54,68 @@
         background-size: contain;
     }
     card:active {
-        background: greenyellow;
+        background: whitesmoke;
+    }
+    /*:after,
+     :before {
+        box-sizing: border-box;
+    }*/
+    #startGame {
+        display: flex;
+        border: 6px solid black;
+        background-color: hsl(58, 100%, 51%);
+        border-radius: 10%;
+        color: #07164b;
+        font-family: "Press Start 2P";
+        width: 300px;
+        height: 80px;
+        font-size: 2em;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        margin-left: 45%;
+        margin-bottom: auto;
     }
     #score {
         display: flex;
-        border: thick double black;
-        border-radius: 10%;
-        width: 12%;
-        height: 6%;
-        background-color: whitesmoke;
+        border: 2px solid black;
+        width: 300px;
+        height: 80px;
         position: absolute;
         right: 5%;
         top: 20%;
-        font-size: 2.8em;
+        font-size: 2em;
         font-family: "Press Start 2P";
         align-items: center;
         justify-content: center;
         justify-items: center;
     }
+    #winner {
+        width: 220px;
+        height: 220px;
+        font-size: 30px;
+        position: absolute;
+        margin-top: 600px;
+        margin-left: 200px
+    }
     #timer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
         width: 200px;
-        height: 100px;
+        height: 80px;
         border: 2px solid black;
         position: absolute;
-        font-size: 50px;
-        /* margin-top: 30px;*/
+        font-size: 30px;
+        margin-top: 300px;
+        margin-left: 200px;
     }
     footer {
         display: flex;
         width: 100%;
-        height: 8%;
+        height: 3%;
         position: absolute;
         bottom: 0%;
         align-items: left;
@@ -141,10 +146,9 @@
     }
     header {
         display: flex;
-        color: hsl(58, 100%, 51%);
-        font-size: 1em;
+        color: rgb(240, 232, 10);
         width: auto;
-        height: 15%;
+        height: 17%;
         justify-items: center;
         align-items: top;
         justify-content: center;
@@ -152,15 +156,6 @@
     }
     h1 {
         font-size: 14px;
-    }
-    #timer {
-        width: 100px;
-        height: 40px;
-        border: 2px solid black;
-        position: absolute;
-        font-size: 16px;
-        margin-top: 60px;
-        /* margin-top: 30px;*/
     }
     .memory-cards {
         display: flex;
@@ -170,10 +165,21 @@
         flex-wrap: wrap;
         justify-content: space-evenly;
         align-content: space-evenly;
-        align-items: stretch;
-        flex-grow: 1;
         margin: auto;
-        margin-bottom: 10%;
+    }
+    card {
+        width: 60px;
+        height: 60px;
+        background-image: url("images/ball.png");
+        background-size: cover;
+        margin: 10px;
+        font-size: 1rem;
+        position: relative;
+        transform: scale 1;
+        cursor: pointer;
+    }
+    card:active {
+        background: #96a1b8;
     }
     /* :after,
      :before {
@@ -192,79 +198,44 @@
         align-items: center;
         justify-content: center;
         position: absolute;
-        margin-top: 10%;
+        margin-top: 8%;
         margin-left: 39%;
+        font-size: 1em;
     }
-    card {
-        width: 60px;
-        height: 60px;
-        background-image: url("images/ball.png");
-        background-size: cover;
-        margin: 10px;
-        font-size: 1rem;
-        position: relative;
-        transform: scale 1;
-        cursor: pointer;
-    }
-    card:active {
-        background: #96a1b8;
+    #timer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 30px;
+        border: 2px solid black;
+        position: absolute;
+        font-size: 12px;
+        margin-top: 70px;
+        margin-left: 80px;
     }
     #score {
         display: flex;
-        border: thick double black;
-        border-radius: 10%;
-        width: 100px;
-        height: 30px;
-        background-color: whitesmoke;
+        border: 2px solid black;
+        border-radius: 50%;
+        width: 55px;
+        height: 55px;
         justify-content: center;
         position: absolute;
-        margin-left: 35%;
-        top: 10%;
-        font-size: 1em;
-        font-family: 'DotGothic16';
+        right: 18%;
+        top: 9%;
+        font-size: 1.5em;
         align-items: center;
         justify-content: center;
     }
-    /*#timer {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 45px;
-        height: 45px;
-        position: absolute;
-        margin-left: 75%;
-        top: 86%;
-        font-size: 1em;
-    }
-    #displayTime {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: thick double black;
-        width: 60px;
-        height: 20px;
-    }
-    button {
-        width: 45px;
-        height: 20px;
-    }
-    #startTimer {
-        background-color: #8ECE6A;
-    }
-    #stopTimer {
-        background-color: red;
-    }
-    #resetTimer {
-        background-color: #5E8BE8;
-    }*/
     footer {
         display: flex;
         width: 100%;
         height: 5%;
         position: absolute;
         bottom: 0%;
-        align-items: center;
-        justify-content: center;
+        align-items: left;
+        justify-content: left;
         font-size: 1em;
     }
 }

@@ -1,4 +1,4 @@
-const timer = document.createElement("p");
+const timer = document.createElement("div");
 timer.id = "timer";
 document.body.appendChild(timer);
 timer.innerText = "00:00";

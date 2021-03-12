@@ -38,20 +38,17 @@ let gameStarted = false;
 //Keep track card first to be clicked in a pair, when done returns to -1
 let firstCardIndex = -1;
 //List save cards as html elements.
-let cards = [];
+let cards = []; //TODO es necesaria? no es lo mismo que pokemon?
 //Sums up pairs matched
 let score = 0;
 
-let matches = [];
+let matches = []; //TO DO IMPROVE
 
 let timeout = undefined;
 
-//TODO
-//let winner= 0;
-
 //Main functions
 const App = () => {
-    //creating HTML
+    //creating HTML elements
     const header = document.createElement("header");
     document.body.appendChild(header);
 
@@ -63,7 +60,7 @@ const App = () => {
     const cardsBox = document.createElement("div");
     cardsBox.className = "memory-cards";
     document.body.appendChild(cardsBox);
-    //Add 18 cards within the div container
+    //For loop to Add 18 cards within the div container
     for (let i = 0; i < 18; i++) {
         const card = document.createElement("card");
         card.className = "pokecards";
@@ -73,7 +70,7 @@ const App = () => {
         cardsBox.appendChild(card);
         /* console.log(card);*/
     }
-    //Creating HTML elements
+
     const startGameButton = document.createElement("button");
     startGameButton.id = "startGame";
     startGameButton.innerText = "PLAY";
@@ -84,16 +81,12 @@ const App = () => {
     scoreGame.id = "score";
     document.body.appendChild(scoreGame);
 
-    /*const timer = document.createElement("div");
-                                                  timer.id = "timer";
-                                                  document.body.appendChild(timer);*/
-
     const footer = document.createElement("footer");
     document.body.appendChild(footer);
     footer.innerText = "LAB 2021";
 
     //function initialize game
-    initializeCards();
+    initializeCards(); //WHY OUTSIDE START FUNCTION?
 };
 
 //Click on cards and they will turn. set the flag called "gameStarted" to true.
@@ -116,7 +109,10 @@ const start = (e) => {
         }, 180 * 1000);
     }
 };
-
+/*if (score < 900) {
+    let time = stopTimer();
+    showWinnerMessage(time, score);}
+}*/
 //To suffle cards
 const shuffle = (items) => {
     items.sort(() => Math.random() - 0.5);

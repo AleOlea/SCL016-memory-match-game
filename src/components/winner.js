@@ -12,7 +12,7 @@ const showWinnerMessage = (time, score) => {
         winnerMessage.innerText = "You are a Pro!";
         console.log();
     } else {
-        winnerMessage.innerText = "Great Game!";
+        winnerMessage.innerText = "Try again!";
         console.log();
     }
 
