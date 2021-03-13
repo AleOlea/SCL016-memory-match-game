@@ -109,7 +109,7 @@ const start = (e) => {
         }, 180 * 1000);
     }
 };
-/*if (score < 900) {
+/*if (score > 900) {
     let time = stopTimer();
     showWinnerMessage(time, score);}
 }*/

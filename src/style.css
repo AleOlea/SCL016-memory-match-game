@@ -17,10 +17,10 @@ body {
         color: rgb(240, 232, 10);
         text-emphasis: strong;
         width: auto;
-        height: 15%;
+        height: 25%;
         align-items: center;
         justify-content: center;
-        font-size: 2.3rem;
+        font-size: 2em;
         font-family: "Press Start 2P";
     }
     .memory-cards {
@@ -92,12 +92,13 @@ body {
         justify-items: center;
     }
     #winner {
-        width: 220px;
+        width: auto;
         height: 220px;
-        font-size: 30px;
+        font-size: 40px;
         position: absolute;
-        margin-top: 600px;
-        margin-left: 200px
+        margin-top: 350px;
+        margin-left: 40%;
+        color: fuchsia;
     }
     #timer {
         display: flex;
