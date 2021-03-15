@@ -60,7 +60,7 @@ const App = () => {
     document.body.appendChild(cardsBox);
     //For loop to Add 18 cards within the div container
     for (let i = 0; i < 18; i++) {
-        const card = document.createElement("card");
+        const card = document.createElement("div");
         card.className = "pokecards";
         card.id = i;
         card.addEventListener("click", handleCardClick);
@@ -92,6 +92,7 @@ const App = () => {
 
     //function initialize game
     initializeCards(); //WHY OUTSIDE START FUNCTION?
+    return footer;
 };
 
 //Click on cards and they will turn. set the flag called "gameStarted" to true.
