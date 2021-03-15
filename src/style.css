@@ -13,15 +13,53 @@ body {
 
 @media (min-width:1701px) and (max-width:4000px) {
     header {
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 200px 200px;
         color: rgb(240, 232, 10);
         text-emphasis: strong;
         width: auto;
-        height: 25%;
+        height: 18%;
+        font-size: 1.5em;
+        font-family: "Press Start 2P";
+    }
+    h1 {
+        display: flex;
+        grid-column-start: 2;
+        grid-column-end: 6;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        align-items: center;
+    }
+    #score {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 2;
+        display: flex;
+        border: 2px solid black;
+        width: 300px;
+        height: 80px;
+        font-size: 30px;
+        font-family: "Press Start 2P";
+        display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 2em;
-        font-family: "Press Start 2P";
+        justify-self: center;
+    }
+    #timer {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        height: 80px;
+        border: 2px solid black;
+        font-size: 30px;
+        justify-self: center;
     }
     .memory-cards {
         display: flex;
@@ -31,8 +69,6 @@ body {
         flex-wrap: wrap;
         justify-content: space-between;
         align-content: space-evenly;
-        /*align-items: stretch;*/
-        /*flex-grow: 1;*/
         margin: auto;
     }
     card {
@@ -40,7 +76,6 @@ body {
         height: 220px;
         background-image: url("images/ball.png");
         background-size: cover;
-        /*margin: 10px;*/
         font-size: 1rem;
         position: relative;
         cursor: pointer;
@@ -53,13 +88,6 @@ body {
         border: 3px solid black;
         background-size: contain;
     }
-    card:active {
-        background: whitesmoke;
-    }
-    /*:after,
-     :before {
-        box-sizing: border-box;
-    }*/
     #startGame {
         display: flex;
         border: 6px solid black;
@@ -77,41 +105,19 @@ body {
         margin-left: 45%;
         margin-bottom: auto;
     }
-    #score {
-        display: flex;
-        border: 2px solid black;
-        width: 300px;
-        height: 80px;
-        position: absolute;
-        right: 5%;
-        top: 20%;
-        font-size: 2em;
-        font-family: "Press Start 2P";
-        align-items: center;
-        justify-content: center;
-        justify-items: center;
-    }
     #winner {
-        width: auto;
-        height: 220px;
-        font-size: 40px;
+        display: flex;
         position: absolute;
-        margin-top: 350px;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        background: whitesmoke;
+        width: 700px;
+        height: 200px;
+        font-size: 40px;
+        margin-top: 200px;
         margin-left: 40%;
         color: fuchsia;
-    }
-    #timer {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        justify-items: center;
-        width: 200px;
-        height: 80px;
-        border: 2px solid black;
-        position: absolute;
-        font-size: 30px;
-        margin-top: 300px;
-        margin-left: 200px;
     }
     footer {
         display: flex;
@@ -120,7 +126,7 @@ body {
         position: absolute;
         bottom: 0%;
         align-items: left;
-        justify-content: center;
+        justify-content: left;
         font-size: 1.5em;
     }
 }
@@ -146,31 +152,67 @@ body {
         border: 1px solid red;
     }
     header {
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
         color: rgb(240, 232, 10);
         width: auto;
-        height: 17%;
+        height: 20%;
         justify-items: center;
-        align-items: top;
         justify-content: center;
-        margin-top: 5%;
+        align-items: center;
+        font-family: "Press Start 2P";
     }
     h1 {
+        display: flex;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        align-items: center;
         font-size: 14px;
+    }
+    #score {
+        display: flex;
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 2;
+        grid-row-end: 2;
+        display: flex;
+        border: 2px solid black;
+        width: 100px;
+        height: 30px;
+        font-size: 1em;
+        font-family: "Press Start 2P";
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #timer {
+        display: flex;
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 2;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 30px;
+        border: 2px solid black;
+        font-size: 12px;
     }
     .memory-cards {
         display: flex;
-        /* order: 0;*/
-        width: 300px;
-        height: 450px;
+        width: 250px;
+        height: 400px;
         flex-wrap: wrap;
         justify-content: space-evenly;
         align-content: space-evenly;
         margin: auto;
     }
     card {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
         background-image: url("images/ball.png");
         background-size: cover;
         margin: 10px;
@@ -182,10 +224,6 @@ body {
     card:active {
         background: #96a1b8;
     }
-    /* :after,
-     :before {
-        box-sizing: border-box;
-}*/
     #startGame {
         display: flex;
         border: 2px solid black;
@@ -199,35 +237,23 @@ body {
         align-items: center;
         justify-content: center;
         position: absolute;
-        margin-top: 8%;
+        margin-top: 5%;
         margin-left: 39%;
         font-size: 1em;
     }
-    #timer {
+    #winner {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 80px;
-        height: 30px;
-        border: 2px solid black;
         position: absolute;
-        font-size: 12px;
-        margin-top: 70px;
-        margin-left: 80px;
-    }
-    #score {
-        display: flex;
-        border: 2px solid black;
-        border-radius: 50%;
-        width: 55px;
-        height: 55px;
+        margin-top: 200px;
+        margin-left: 25%;
+        width: 200px;
+        height: 300px;
+        font-size: 20px;
+        color: fuchsia;
         justify-content: center;
-        position: absolute;
-        right: 18%;
-        top: 9%;
-        font-size: 1.5em;
         align-items: center;
-        justify-content: center;
+        border: 2px solid black;
+        background-color: whitesmoke;
     }
     footer {
         display: flex;
@@ -247,43 +273,58 @@ body {
 
 /*   ------OJO CAMBIO MEDIA */
 
-
-/*   ------OJO CAMBIO MEDIA */
-
-
-/*   ------OJO CAMBIO MEDIA */
-
 @media (min-width:701px) and (max-width:1700px) {
-    body {
-        margin: 0;
-        padding: 0;
-        height: 100vh;
-        width: 100vw;
-        box-sizing: border-box;
-        background-image: url("./images/nature.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        font-family: "Press Start 2P";
-        font-size: 12px;
-        border: 1px solid red;
-    }
     header {
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 100px 100px;
         color: hsl(58, 100%, 51%);
         width: auto;
-        height: 30%;
+        height: 25%;
         justify-items: center;
-        align-items: top;
+        align-items: center;
         justify-content: center;
-        margin-top: 5%;
     }
     h1 {
-        font-size: 2.5em;
+        font-size: 36px;
+        grid-column-start: 1;
+        grid-column-end: 6;
+        grid-row-start: 1;
+        grid-row-end: 1;
+    }
+    #score {
+        grid-column-start: 4;
+        grid-column-end: 5;
+        grid-row-start: 2;
+        grid-row-end: 2;
+        display: flex;
+        border: 2px solid black;
+        width: 140px;
+        height: 60px;
+        font-size: 1rem;
+        font-family: "Press Start 2P";
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+    }
+    #timer {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        width: 140px;
+        height: 60px;
+        border: 2px solid black;
+        font-size: 1rem;
     }
     .memory-cards {
         display: flex;
-        width: 700px;
-        height: 400px;
+        width: 450px;
+        height: 600px;
         flex-wrap: wrap;
         justify-content: space-between;
         align-content: space-evenly;
@@ -292,29 +333,9 @@ body {
         margin: auto;
         margin-bottom: 10%;
     }
-    /* :after,
-     :before {
-        box-sizing: border-box;
-}*/
-    #startGame {
-        display: flex;
-        border: 2px solid black;
-        background-color: hsl(58, 100%, 51%);
-        border-radius: 10%;
-        color: black;
-        font-family: "Press Start 2P";
-        width: 130px;
-        height: 40px;
-        cursor: pointer;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        margin-top: -6%;
-        margin-left: 42%;
-    }
     card {
-        width: 90px;
-        height: 90px;
+        width: 100px;
+        height: 100px;
         background-image: url("images/ball.png");
         background-size: cover;
         margin: 10px;
@@ -323,57 +344,35 @@ body {
         transform: scale 1;
         cursor: pointer;
     }
-    card:active {
-        background: #96a1b8;
-    }
-    #score {
+    #startGame {
         display: flex;
-        border: thick double black;
+        border: 2px solid black;
+        background-color: hsl(58, 100%, 51%);
         border-radius: 10%;
+        color: black;
         width: 130px;
         height: 40px;
-        background-color: whitesmoke;
-        justify-content: center;
-        position: absolute;
-        margin-left: 42%;
-        top: 16%;
-        font-size: 1em;
-        font-family: 'DotGothic16';
+        cursor: pointer;
         align-items: center;
         justify-content: center;
+        position: relative;
+        margin-top: auto;
+        margin-left: 45%;
     }
-    /*#timer {
+    #winner {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 45px;
-        height: 45px;
         position: absolute;
-        margin-left: 75%;
-        top: 86%;
-        font-size: 1em;
-    }
-    #displayTime {
-        display: flex;
-        align-items: center;
         justify-content: center;
-        border: thick double black;
-        width: 60px;
-        height: 20px;
+        align-items: center;
+        border: 1px solid black;
+        background: whitesmoke;
+        width: 700px;
+        height: 700px;
+        font-size: 40px;
+        margin-top: 350px;
+        margin-left: 40%;
+        color: fuchsia;
     }
-    button {
-        width: 45px;
-        height: 20px;
-    }
-    #startTimer {
-        background-color: #8ECE6A;
-    }
-    #stopTimer {
-        background-color: red;
-    }
-    #resetTimer {
-        background-color: #5E8BE8;
-    }*/
     footer {
         display: flex;
         width: 100%;

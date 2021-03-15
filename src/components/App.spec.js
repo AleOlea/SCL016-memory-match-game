@@ -1,15 +1,15 @@
 import App from "./App.js";
 
-/*describe("App", () => {
+describe("App", () => {
+    it("should render without crashing", () => {
+        const el = App();
+        expect(el instanceof HTMLElement).toBe(true);
+    });
+});
+
+/* describe("App", () => {
     it("should render without crashing", () => {
         const el = App();
         expect(el instanceof HTMLElement).toBe(true);
     });
 });*/
-
-describe("App", () => {
-    it("should render without crashing", () => {
-        const header = App();
-        expect(header instanceof HTMLElement).toBe(true);
-    });
-});

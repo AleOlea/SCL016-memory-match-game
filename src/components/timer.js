@@ -1,7 +1,5 @@
 const timer = document.createElement("div");
 timer.id = "timer";
-document.body.appendChild(timer);
-timer.innerText = "00:00";
 let time = 0;
 let interval = undefined;
 

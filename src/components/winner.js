@@ -10,6 +10,7 @@ const showWinnerMessage = (time, score) => {
         console.log();
     } else if (time <= 120 && score === 900) {
         winnerMessage.innerText = "You are a Pro!";
+
         console.log();
     } else {
         winnerMessage.innerText = "Try again!";

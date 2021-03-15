@@ -10,8 +10,6 @@ let dataPokemon = pokemon.items;
 // O alternativamente podríamos cargar el JSON de forma asíncrona usando// `fetch` en el momento que consideremos necesario.
 // fetch('./data/pokemon/pokemon.json')//   .then(resp => resp.json())//   .then(console.log)//   .catch(console.error);//
 
-//Global Variables
-
 const pokeNames = [
     "bulbasaur",
     "ivysaur",
@@ -38,11 +36,11 @@ let gameStarted = false;
 //Keep track card first to be clicked in a pair, when done returns to -1
 let firstCardIndex = -1;
 //List save cards as html elements.
-let cards = []; //TODO es necesaria? no es lo mismo que pokemon?
-//Sums up pairs matched
+let cards = [];
+
 let score = 0;
 
-let matches = []; //TO DO IMPROVE
+let matches = []; //    ????? how it works?
 
 let timeout = undefined;
 
@@ -71,15 +69,22 @@ const App = () => {
         /* console.log(card);*/
     }
 
-    const startGameButton = document.createElement("button");
+    const startGameButton = document.createElement("div");
     startGameButton.id = "startGame";
     startGameButton.innerText = "PLAY";
     startGameButton.addEventListener("click", start);
     document.body.appendChild(startGameButton);
 
-    const scoreGame = document.createElement("button");
+    const scoreGame = document.createElement("div");
     scoreGame.id = "score";
     document.body.appendChild(scoreGame);
+    header.appendChild(scoreGame);
+
+    const timer = document.createElement("div");
+    timer.id = "timer";
+    document.body.appendChild(timer);
+    header.appendChild(timer);
+    timer.innerText = "00:00";
 
     const footer = document.createElement("footer");
     document.body.appendChild(footer);
@@ -109,8 +114,8 @@ const start = (e) => {
         }, 180 * 1000);
     }
 };
-/*if (score > 900) {
-    let time = stopTimer();
+/*if (score < 900) {
+    stopTimer(),
     showWinnerMessage(time, score);}
 }*/
 //To suffle cards
@@ -150,9 +155,8 @@ const handleCardClick = (e) => {
             if (pokeNames[firstCardIndex] === pokeNames[currentCardIndex]) {
                 if (!matches.includes(pokeNames[firstCardIndex])) {
                     updateScore(score + 100);
-                    matches.push(pokeNames[firstCardIndex]);
+                    matches.push(pokeNames[firstCardIndex]); //NEEDS SIMPLIFICATION
 
-                    /*console.log("matches are:", matches);*/
                     console.log("Score is:", score);
                 }
             } else {
@@ -176,7 +180,7 @@ const turnCardBack = (card) => {
 
 const updateScore = (newScore) => {
     score = newScore;
-    document.getElementById("score").innerText = score + " points";
+    document.getElementById("score").innerText = score + " point";
     if (score === 900) {
         let time = stopTimer();
         showWinnerMessage(time, score);
@@ -184,8 +188,4 @@ const updateScore = (newScore) => {
     }
 };
 
-/*const updateMatches = () => {
-    matches= newMacthes;
-    document.getElementById("matches").innerText =  + " points";
-};*/
 export default App;
