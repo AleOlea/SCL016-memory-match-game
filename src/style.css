@@ -157,7 +157,7 @@ body {
         grid-template-rows: 1fr 1fr;
         color: rgb(240, 232, 10);
         width: auto;
-        height: 20%;
+        height: 150px;
         justify-items: center;
         justify-content: center;
         align-items: center;

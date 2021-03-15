@@ -47,8 +47,9 @@ let timeout = undefined;
 //Main functions
 const App = () => {
     //creating HTML elements
+
     const header = document.createElement("header");
-    document.body.appendChild(header);
+    root.appendChild(header);
 
     const title = document.createElement("h1");
     document.body.appendChild(title);
@@ -57,10 +58,10 @@ const App = () => {
 
     const cardsBox = document.createElement("div");
     cardsBox.className = "memory-cards";
-    document.body.appendChild(cardsBox);
+    root.appendChild(cardsBox);
     //For loop to Add 18 cards within the div container
     for (let i = 0; i < 18; i++) {
-        const card = document.createElement("div");
+        const card = document.createElement("card");
         card.className = "pokecards";
         card.id = i;
         card.addEventListener("click", handleCardClick);
@@ -73,21 +74,21 @@ const App = () => {
     startGameButton.id = "startGame";
     startGameButton.innerText = "PLAY";
     startGameButton.addEventListener("click", start);
-    document.body.appendChild(startGameButton);
+    root.appendChild(startGameButton);
 
     const scoreGame = document.createElement("div");
     scoreGame.id = "score";
-    document.body.appendChild(scoreGame);
+    /*document.body.appendChild(scoreGame);*/
     header.appendChild(scoreGame);
 
     const timer = document.createElement("div");
     timer.id = "timer";
-    document.body.appendChild(timer);
+    /*document.body.appendChild(timer);*/
     header.appendChild(timer);
     timer.innerText = "00:00";
 
     const footer = document.createElement("footer");
-    document.body.appendChild(footer);
+    root.appendChild(footer);
     footer.innerText = "LAB 2021";
 
     //function initialize game

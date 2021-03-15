@@ -3,7 +3,7 @@ winnerMessage.id = "winner";
 winnerMessage.innerText = "";
 winnerMessage.style = "display:none";
 
-document.body.appendChild(winnerMessage);
+root.appendChild(winnerMessage);
 const showWinnerMessage = (time, score) => {
     if (time <= 60 && score === 900) {
         winnerMessage.innerText = "You are a master!";
