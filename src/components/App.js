@@ -52,7 +52,6 @@ const App = () => {
     root.appendChild(header);
 
     const title = document.createElement("h1");
-    /*document.body.appendChild(title);*/
     title.innerHTML = "Pokemon Memory Card Game";
     header.appendChild(title);
 
@@ -78,12 +77,12 @@ const App = () => {
 
     const scoreGame = document.createElement("div");
     scoreGame.id = "score";
-    /*document.body.appendChild(scoreGame);*/
+
     header.appendChild(scoreGame);
 
     const timer = document.createElement("div");
     timer.id = "timer";
-    /*document.body.appendChild(timer);*/
+
     header.appendChild(timer);
     timer.innerText = "00:00";
 
