@@ -1,8 +1,8 @@
 import pokemon from "../data/pokemon/pokemon.js";
 import { startTimer, stopTimer } from "../components/timer.js";
-import showWinnerMessage from "../components/winner.js";
+import { showWinnerMessage, hideWinnerMessage } from "../components/winner.js";
 
-console.log(pokemon); //console index, id, name, image url.
+/*console.log(pokemon); //console index, id, name, image url.*/
 
 //Global Variables
 let dataPokemon = pokemon.items;
@@ -42,17 +42,17 @@ let score = 0;
 
 let matches = []; //    ????? how it works?
 
-let timeout = undefined;
-
 //Main functions
 const App = () => {
     //creating HTML elements
+
+    const root = document.getElementById("root");
 
     const header = document.createElement("header");
     root.appendChild(header);
 
     const title = document.createElement("h1");
-    document.body.appendChild(title);
+    /*document.body.appendChild(title);*/
     title.innerHTML = "Pokemon Memory Card Game";
     header.appendChild(title);
 
@@ -91,8 +91,14 @@ const App = () => {
     root.appendChild(footer);
     footer.innerText = "LAB 2021";
 
+    const winnerMessage = document.createElement("div");
+    winnerMessage.id = "winner";
+    winnerMessage.innerText = "";
+    winnerMessage.style = "display:none";
+    root.appendChild(winnerMessage);
+
     //function initialize game
-    initializeCards(); //WHY OUTSIDE START FUNCTION?
+    initializeCards();
     return footer;
 };
 
@@ -102,24 +108,21 @@ const start = (e) => {
         initializeCards();
         gameStarted = false;
         e.target.innerText = "PLAY";
-        if (timeout) {
-            clearTimeout(timeout);
-        }
         stopTimer(true);
+        hideWinnerMessage();
     } else {
         gameStarted = true;
         e.target.innerText = "Game On";
         startTimer();
-        timeout = setTimeout(() => {
-            let time = stopTimer();
-            showWinnerMessage(time, score);
+        setTimeout(() => {
+            if (score < 900) {
+                let time = stopTimer();
+                showWinnerMessage(time, score);
+            }
         }, 180 * 1000);
     }
 };
-/*if (score < 900) {
-    stopTimer(),
-    showWinnerMessage(time, score);}
-}*/
+
 //To suffle cards
 const shuffle = (items) => {
     items.sort(() => Math.random() - 0.5);
@@ -142,6 +145,9 @@ const handleCardClick = (e) => {
         console.log(e.target.id);
 
         let currentCardIndex = e.target.id;
+        if (matches.includes(pokeNames[currentCardIndex])) {
+            return; //should ignore this card becuse has been aleady been matched
+        }
         // happens the "turning" of the card.
         const imageUrl = dataPokemon.find(
             (item) => item.id === pokeNames[currentCardIndex]
@@ -155,12 +161,9 @@ const handleCardClick = (e) => {
         } else {
             //dealing with the second card. comparing the names
             if (pokeNames[firstCardIndex] === pokeNames[currentCardIndex]) {
-                if (!matches.includes(pokeNames[firstCardIndex])) {
-                    updateScore(score + 100);
-                    matches.push(pokeNames[firstCardIndex]); //NEEDS SIMPLIFICATION
-
-                    console.log("Score is:", score);
-                }
+                updateScore(score + 100);
+                matches.push(pokeNames[firstCardIndex]);
+                console.log("Score is:", score);
             } else {
                 //turn both cards back
                 const oldFirstCardIndex = firstCardIndex;
@@ -186,7 +189,6 @@ const updateScore = (newScore) => {
     if (score === 900) {
         let time = stopTimer();
         showWinnerMessage(time, score);
-        clearTimeout(timeout);
     }
 };
 

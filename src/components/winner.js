@@ -1,10 +1,5 @@
-const winnerMessage = document.createElement("div");
-winnerMessage.id = "winner";
-winnerMessage.innerText = "";
-winnerMessage.style = "display:none";
-
-root.appendChild(winnerMessage);
 const showWinnerMessage = (time, score) => {
+    const winnerMessage = document.getElementById("winner");
     if (time <= 60 && score === 900) {
         winnerMessage.innerText = "You are a master!";
         console.log();
@@ -20,4 +15,9 @@ const showWinnerMessage = (time, score) => {
     winnerMessage.style = "display:block";
 };
 
-export default showWinnerMessage;
+const hideWinnerMessage = () => {
+    const winnerMessage = document.getElementById("winner");
+    winnerMessage.style = "display:none";
+};
+
+export { showWinnerMessage, hideWinnerMessage };
