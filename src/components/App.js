@@ -2,13 +2,10 @@ import pokemon from "../data/pokemon/pokemon.js";
 import { startTimer, stopTimer } from "../components/timer.js";
 import { showWinnerMessage, hideWinnerMessage } from "../components/winner.js";
 
-/*console.log(pokemon); //console index, id, name, image url.*/
+/*console.log(pokemon); .*/
 
 //Global Variables
 let dataPokemon = pokemon.items;
-
-// O alternativamente podríamos cargar el JSON de forma asíncrona usando// `fetch` en el momento que consideremos necesario.
-// fetch('./data/pokemon/pokemon.json')//   .then(resp => resp.json())//   .then(console.log)//   .catch(console.error);//
 
 const pokeNames = [
     "bulbasaur",
@@ -46,10 +43,10 @@ let matches = []; //    ????? how it works?
 const App = () => {
     //creating HTML elements
 
-    const root = document.getElementById("root");
+    const main = document.createElement("main");
 
     const header = document.createElement("header");
-    root.appendChild(header);
+    main.appendChild(header);
 
     const title = document.createElement("h1");
     title.innerHTML = "Pokemon Memory Card Game";
@@ -57,7 +54,7 @@ const App = () => {
 
     const cardsBox = document.createElement("div");
     cardsBox.className = "memory-cards";
-    root.appendChild(cardsBox);
+    main.appendChild(cardsBox);
     //For loop to Add 18 cards within the div container
     for (let i = 0; i < 18; i++) {
         const card = document.createElement("card");
@@ -73,7 +70,7 @@ const App = () => {
     startGameButton.id = "startGame";
     startGameButton.innerText = "PLAY";
     startGameButton.addEventListener("click", start);
-    root.appendChild(startGameButton);
+    main.appendChild(startGameButton);
 
     const scoreGame = document.createElement("div");
     scoreGame.id = "score";
@@ -87,18 +84,16 @@ const App = () => {
     timer.innerText = "00:00";
 
     const footer = document.createElement("footer");
-    root.appendChild(footer);
+    main.appendChild(footer);
     footer.innerText = "LAB 2021";
 
     const winnerMessage = document.createElement("div");
     winnerMessage.id = "winner";
     winnerMessage.innerText = "";
     winnerMessage.style = "display:none";
-    root.appendChild(winnerMessage);
+    header.appendChild(winnerMessage);
 
-    //function initialize game
-    initializeCards();
-    return footer;
+    return main;
 };
 
 //Click on cards and they will turn. set the flag called "gameStarted" to true.
@@ -110,6 +105,7 @@ const start = (e) => {
         stopTimer(true);
         hideWinnerMessage();
     } else {
+        initializeCards();
         gameStarted = true;
         e.target.innerText = "Game On";
         startTimer();
@@ -183,6 +179,7 @@ const turnCardBack = (card) => {
 };
 
 const updateScore = (newScore) => {
+    console.log("manzana");
     score = newScore;
     document.getElementById("score").innerText = score + " point";
     if (score === 900) {
