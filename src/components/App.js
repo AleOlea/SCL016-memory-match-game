@@ -110,8 +110,8 @@ const start = (e) => {
         e.target.innerText = "Game On";
         startTimer();
         setTimeout(() => {
-            if (score < 900) {
-                let time = stopTimer();
+            if (score === 900) {
+                let time = stopTimer(); //hice cambio y funciona en juego probado
                 showWinnerMessage(time, score);
             }
         }, 180 * 1000);
@@ -124,7 +124,6 @@ const shuffle = (items) => {
 };
 
 const initializeCards = () => {
-    //TODO: reset the timer
     firstCardIndex = -1; //-1 meaans we are not betwen a guess.
     updateScore(0); //calling function defined lower in the code.
     shuffle(pokeNames);

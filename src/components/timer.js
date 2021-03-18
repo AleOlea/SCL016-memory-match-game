@@ -22,6 +22,7 @@ const startTimer = () => {
         timer.innerText = `${twoDigits(minutes)}:${twoDigits(seconds)}`;
     }
 };
+
 const stopTimer = (shouldReset = false) => {
     if (shouldReset) {
         const timer = document.getElementById("timer");
