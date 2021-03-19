@@ -74,6 +74,7 @@ const App = () => {
 
     const scoreGame = document.createElement("div");
     scoreGame.id = "score";
+    scoreGame.innerText = "0 points";
 
     header.appendChild(scoreGame);
 
@@ -180,11 +181,12 @@ const turnCardBack = (card) => {
 const updateScore = (newScore) => {
     console.log("manzana");
     score = newScore;
-    document.getElementById("score").innerText = score + " point";
+    document.getElementById("score").innerText = score + " points";
     if (score === 900) {
         let time = stopTimer();
         showWinnerMessage(time, score);
     }
 };
 
-export default App;
+/*export default App;*/
+export { App, shuffle, initializeCards };

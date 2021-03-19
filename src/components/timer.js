@@ -4,23 +4,24 @@ let interval = undefined;
 const startTimer = () => {
     let startingMinutes = 0;
     time = startingMinutes * 60;
-    const timer = document.getElementById("timer");
 
     interval = setInterval(updateCountdown, 1000);
+};
 
-    const twoDigits = (n) => {
-        if (n < 10) {
-            return `0${n}`;
-        }
-        return n;
-    };
-
-    function updateCountdown() {
-        time++;
-        const minutes = Math.floor(time / 60);
-        let seconds = time % 60;
-        timer.innerText = `${twoDigits(minutes)}:${twoDigits(seconds)}`;
+const twoDigits = (n) => {
+    if (n < 10) {
+        return `0${n}`;
     }
+    return n;
+};
+
+const updateCountdown = () => {
+    const timer = document.getElementById("timer");
+
+    time++;
+    const minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+    timer.innerText = `${twoDigits(minutes)}:${twoDigits(seconds)}`;
 };
 
 const stopTimer = (shouldReset = false) => {
@@ -35,4 +36,4 @@ const stopTimer = (shouldReset = false) => {
     return time;
 };
 
-export { startTimer, stopTimer };
+export { startTimer, stopTimer, twoDigits, updateCountdown };
