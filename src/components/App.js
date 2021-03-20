@@ -189,4 +189,4 @@ const updateScore = (newScore) => {
 };
 
 /*export default App;*/
-export { App, shuffle, initializeCards };
+export { App, shuffle, initializeCards, updateScore };

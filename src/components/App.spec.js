@@ -55,15 +55,6 @@ describe("updateCountdown", () => {
     });
 });
 
-/*const updateCountdown = () => {
-    const timer = document.getElementById("timer");
-
-    time++;
-    const minutes = Math.floor(time / 60);
-    let seconds = time % 60;
-    timer.innerText = `${twoDigits(minutes)}:${twoDigits(seconds)}`;
-};*/
-
 describe("winner", () => {
     document.body.appendChild(App());
     it("should show a winner message", () => {
