@@ -1,6 +1,6 @@
 import { App, shuffle } from "./App.js";
 import { showWinnerMessage, hideWinnerMessage } from "./winner.js";
-import { startTimer, stopTimer } from "./timer.js";
+import { startTimer, stopTimer, twoDigits } from "./timer.js";
 
 describe("App", () => {
     it("should render without crashing", () => {
@@ -24,6 +24,25 @@ describe("timer", () => {
             }, 2000);
         });
     }, 2000);
+    it("should start the timer", () => {
+        //Obs
+        startTimer();
+        setTimeout(() => {
+            const timer = document.getElementById("timer");
+            const oldTime = timer.innerText;
+
+            setTimeout(() => {
+                const currentTime = timer.innerText;
+                expect(oldTime).toBe(currentTime);
+            }, 0);
+        });
+    }, 0);
+
+    it("Add a 0 to numbers under 10", () => {
+        twoDigits();
+
+        expect(30).toBe(30);
+    });
 });
 
 describe("winner", () => {
