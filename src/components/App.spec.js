@@ -1,6 +1,6 @@
 import { App, shuffle } from "./App.js";
 import { showWinnerMessage, hideWinnerMessage } from "./winner.js";
-import { startTimer, stopTimer, twoDigits } from "./timer.js";
+import { startTimer, stopTimer, twoDigits, updateCountdown } from "./timer.js";
 
 describe("App", () => {
     it("should render without crashing", () => {
@@ -44,6 +44,25 @@ describe("timer", () => {
         expect(30).toBe(30);
     });
 });
+
+describe("updateCountdown", () => {
+    document.body.appendChild(App());
+    updateCountdown();
+    it("Should display added minutes and seconds", () => {
+        const timer = document.getElementById("timer");
+        const displayTime = timer.innerText;
+        expect(displayTime instanceof HTMLElement).toBe(false);
+    });
+});
+
+/*const updateCountdown = () => {
+    const timer = document.getElementById("timer");
+
+    time++;
+    const minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+    timer.innerText = `${twoDigits(minutes)}:${twoDigits(seconds)}`;
+};*/
 
 describe("winner", () => {
     document.body.appendChild(App());
