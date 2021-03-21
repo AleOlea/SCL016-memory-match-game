@@ -1,4 +1,4 @@
-import { App, shuffle } from "./App.js";
+import { App, shuffle, updateScore } from "./App.js";
 import { showWinnerMessage, hideWinnerMessage } from "./winner.js";
 import { startTimer, stopTimer, twoDigits, updateCountdown } from "./timer.js";
 
@@ -65,6 +65,16 @@ describe("updateCountdown", () => {
         const timer = document.getElementById("timer");
         const displayTime = timer.innerText;
         expect(displayTime instanceof HTMLElement).toBe(false);
+    });
+});
+
+describe("updateScore", () => {
+    document.body.appendChild(App());
+    updateScore();
+    it("Should update Score", () => {
+        const score = document.getElementById("score");
+        const displayScore = score.innerText;
+        expect(displayScore instanceof HTMLElement).toBe(false);
     });
 });
 

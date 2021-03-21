@@ -37,7 +37,7 @@ let cards = [];
 
 let score = 0;
 
-let matches = []; //    ????? how it works?
+let matches = [];
 
 //Main functions
 const App = () => {
