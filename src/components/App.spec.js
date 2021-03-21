@@ -76,6 +76,12 @@ describe("updateScore", () => {
         const displayScore = score.innerText;
         expect(displayScore instanceof HTMLElement).toBe(false);
     });
+    it("Should update Score", () => {
+        const score = document.getElementById("score");
+        const plusScore = score;
+
+        expect(plusScore instanceof HTMLElement).toBe(true);
+    });
 });
 
 describe("winner", () => {
