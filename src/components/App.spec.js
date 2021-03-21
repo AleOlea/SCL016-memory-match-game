@@ -37,6 +37,19 @@ describe("timer", () => {
             }, 0);
         });
     }, 0);
+    it("should stop the timer", () => {
+        //Obs
+        stopTimer();
+        setTimeout(() => {
+            const timer = document.getElementById("timer");
+            const oldTime = timer.innerText;
+
+            setTimeout(() => {
+                const currentTime = timer.innerText;
+                expect(oldTime).toBe(currentTime);
+            }, 180);
+        });
+    }, 180);
 
     it("Add a 0 to numbers under 10", () => {
         twoDigits();
