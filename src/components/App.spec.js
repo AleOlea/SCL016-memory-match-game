@@ -1,4 +1,4 @@
-import { App, shuffle, updateScore } from "./App.js";
+import { App, shuffle, updateScore, handleCardClick } from "./App.js";
 import { showWinnerMessage, hideWinnerMessage } from "./winner.js";
 import { startTimer, stopTimer, twoDigits, updateCountdown } from "./timer.js";
 
@@ -121,5 +121,15 @@ describe("shuffle", () => {
     it("should shuffle the elements", () => {
         let elements = [1, 2, 3, 4, 5, 6, 7, 8, 9];
         expect(shuffle(elements) == elements).toBe(false);
+    });
+});
+
+describe("handleCardClick", () => {
+    handleCardClick();
+    document.body.appendChild(App());
+    it("Should turn card clicked into currentCardIndex", () => {
+        let cardindex = -1;
+        let currentCardIndex = 1;
+        expect(cardindex[-1]).toBe(currentCardIndex[1]);
     });
 });

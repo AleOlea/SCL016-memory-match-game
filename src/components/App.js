@@ -124,7 +124,7 @@ const shuffle = (items) => {
 
 const initializeCards = () => {
     firstCardIndex = -1; //-1 meaans we are not betwen a guess.
-    updateScore(0); //calling function defined lower in the code.
+    updateScore(0); //function defined lower in the code.
     shuffle(pokeNames);
     pokeNames.forEach((name, index) => {
         console.log(Math.floor(index / 6), index % 6, name);
@@ -168,6 +168,7 @@ const handleCardClick = (e) => {
             }
 
             firstCardIndex = -1;
+            return handleCardClick; //last added
         }
     }
 };
@@ -186,5 +187,4 @@ const updateScore = (newScore) => {
     }
 };
 
-/*export default App;*/
-export { App, shuffle, updateScore };
+export { App, shuffle, updateScore, handleCardClick };
