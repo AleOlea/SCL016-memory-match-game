@@ -2,8 +2,6 @@ import pokemon from "../data/pokemon/pokemon.js";
 import { startTimer, stopTimer } from "../components/timer.js";
 import { showWinnerMessage, hideWinnerMessage } from "../components/winner.js";
 
-/*console.log(pokemon); .*/
-
 //Global Variables
 let dataPokemon = pokemon.items;
 
@@ -55,7 +53,7 @@ const App = () => {
     const cardsBox = document.createElement("div");
     cardsBox.className = "memory-cards";
     main.appendChild(cardsBox);
-    //For loop to Add 18 cards within the div container
+    //For loop to Add 18 cards main container
     for (let i = 0; i < 18; i++) {
         const card = document.createElement("card");
         card.className = "pokecards";
@@ -106,13 +104,13 @@ const start = (e) => {
         stopTimer(true);
         hideWinnerMessage();
     } else {
-        initializeCards();
         gameStarted = true;
+        initializeCards();
         e.target.innerText = "Game On";
         startTimer();
         setTimeout(() => {
-            if (score === 900) {
-                let time = stopTimer(); //hice cambio y funciona en juego probado
+            if (score < 900) {
+                let time = stopTimer();
                 showWinnerMessage(time, score);
             }
         }, 180 * 1000);
@@ -189,4 +187,4 @@ const updateScore = (newScore) => {
 };
 
 /*export default App;*/
-export { App, shuffle, initializeCards, updateScore };
+export { App, shuffle, updateScore };
