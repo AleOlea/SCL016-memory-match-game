@@ -25,7 +25,6 @@ describe("timer", () => {
         });
     }, 2000);
     it("should start the timer", () => {
-        //Obs
         startTimer();
         setTimeout(() => {
             const timer = document.getElementById("timer");
@@ -37,7 +36,7 @@ describe("timer", () => {
             }, 0);
         });
     }, 0);
-    it("should stop the timer", () => {
+    it("should restart the timer in play again", () => {
         //Obs
         stopTimer();
         setTimeout(() => {

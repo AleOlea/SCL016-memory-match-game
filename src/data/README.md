@@ -1,38 +1,50 @@
-# Data (sets de cartas)
+# Laboratoria/SCL016
 
-Este directorio (carpeta) contiene dos fuentes de datos (sets de cartas) que
-podemos usar en el proyecto. Cada set está en una sub-carpeta distinta:
+Project: Pokemon Memory Match Game
+Developers:
+Karin Ojeda
+Alejandra Olea
+Credits: Images Unsplash (free).
+Este proyecto requiere UX/UI investigación y consecuente iteration; construir historias de usuarios. Prototipado se realizo en etapas: bosquejos en papel y prototipos de baja fidelidad que fueron evolucionaando a alta fidelidad como resultados proceso de investigación o research de tus usuarios. Una fase importante fue la priorizacion de features hacking vs/tiempo dentro del scope del proyecto. Para ver la información completa del procesao UX favor visitar la presentación en Miro.
+https://miro.com/app/board/o9J_lS32vAA=/
 
-* [`pokemon`](./pokemon)
-* [`webdev`](./webdev)
+_La interfaz de la aplicación será desplegada usando GitHub Pages._
 
-Dentro de cada carpeta encontrarás dos archivos: uno con la extensión `.js` y
-otro `.json`. Ambos archivos contienen la misma data; la diferencia es que el
-`.js` lo usaremos a través de un [`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import),
-mientras que el `.json` está ahí para opcionalmente cargar la data de forma
-asíncrona con [`fetch()`](https://developer.mozilla.org/es/docs/Web/API/Fetch_API).
+## 1. Resumen Proyecto:
 
-## ¿Cómo agrego mis propios sets de cartas?
+En este proyecto se construye una versión web del juego Memory Match, en la que una jugadora pueda jugar sola, en el navegador. Es un juego en el que las cartas se dan la vuelta de a dos cartas en cada turno. El objetivo del juego es destapar parejas de cartas que coincidan.
 
-Éstas no son las únicas cartas que podemos usar. Si quieres puedes añadir los
-sets de cartas que consideres para tu aplicación. Si eliges agregar sets de
-cartas te recomendamos mantener la misma estructura de los datos (ambos sets de
-ejemplo usan la misma estructura).
+## 2. Detalles del proyecto:
 
-Por ejmplo, imaginemos que queremos agregar un set de cartas de gatitos. Para
-hacernos la vida más fácil, dupliquemos un set existente y modifiquémoslo:
+Objetivo de aprendizaje: Diseñar y construir una interfaz web basada en data e interacción con la usuaria.
+HTML y CSS, DOM, JavaScript, Testeo unitario, estructura del código y guía de estilo, Git y GitHub, UX/UI.
 
-```sh
-# Desde el directorio raíz de la aplicación en el terminal, copiamos
-# recursivamente (con la opción `-r`, ya que se trata de un directorio) el
-# directorio `data/pokemon` a la ruta `data/gatitos`.
-cp -r data/pokemon data/gatitos
+## 3.Definición del producto
 
-# Renombramos los archivos de la carpeta gatitos...
-mv data/gatitos/pokemon.js data/gatitos/gatitos.js
-mv data/gatitos/pokemon.json data/gatitos/gatitos.json
-```
+Es un juego de cartas con imagamenes del famoso juego pokemon en el que las cartas se dan la vuelta de a dos cartas en cada turno. Una vez destapadas todas las cartas el usuario recibe un mensaje con su nivel de performance de acuerdo a cuanto se demoro en encontrar los pares.
 
-Ahora ya puedes editar el contenido de los archivos de gatitos según tus
-necesidades. Ten en cuenta que puedes cambiar el número de elementos (cartas) en
-cada set si quieres también cambiar la dificultad del juego :wink:.
+## 4. investigacion UX
+
+Primer approach: Investigacion en la web.
+
+a.- Quiénes son los usuarios?
+
+Personas que entretención. Para ver mas sobre el usuario favor referir a Miro board.
+
+b.- Objetivos en relación con el producto?
+
+Engagament, Adoption, conversion.
+
+c.-Cómo el producto soluciona los problemas/necesidades de dichos usuarios.
+
+Es un juego que proporciona entretención y ayuda a ejercitar la memoria visual.
+
+## 5. foto de tu primer prototipo en papel.
+
+https://miro.com/welcomeonboard/ESQn6iZc7GnmcP4VqLwmw43mquu5B2G104muvZRuaSrIusIT3WUkxL5Mlr0OWIuE
+
+## 6. Agregar un resumen del feedback recibido indicando las mejoras a realizar.
+
+## 7. Imagen del prototipo final.
+
+https://www.figma.com/file/SgmrBmKFh6eyHgA86PIY8c/CARD-GAME?node-id=53%3A34

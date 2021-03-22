@@ -98,7 +98,7 @@ const App = () => {
 //Click on cards and they will turn. set the flag called "gameStarted" to true.
 const start = (e) => {
     if (gameStarted) {
-        initializeCards();
+        // initializeCards();
         gameStarted = false;
         e.target.innerText = "PLAY";
         stopTimer(true);
