@@ -98,11 +98,11 @@ const App = () => {
 //Click on cards and they will turn. set the flag called "gameStarted" to true.
 const start = (e) => {
     if (gameStarted) {
-        // initializeCards();
         gameStarted = false;
         e.target.innerText = "PLAY";
         stopTimer(true);
         hideWinnerMessage();
+        /*initializeCards();*/
     } else {
         gameStarted = true;
         initializeCards();
@@ -115,6 +115,7 @@ const start = (e) => {
             }
         }, 180 * 1000);
     }
+    return start;
 };
 
 //To suffle cards
@@ -135,6 +136,7 @@ const initializeCards = () => {
 //First part is cheching if game started is true for cards to be clickable.
 const handleCardClick = (e) => {
     if (gameStarted) {
+        //for cards to be clickable
         console.log(e.target.id);
 
         let currentCardIndex = e.target.id;
@@ -168,7 +170,7 @@ const handleCardClick = (e) => {
             }
 
             firstCardIndex = -1;
-            return handleCardClick; //last added
+            return handleCardClick;
         }
     }
 };
@@ -178,7 +180,7 @@ const turnCardBack = (card) => {
 };
 
 const updateScore = (newScore) => {
-    console.log("manzana");
+    /*∫console.log("manzana");*/
     score = newScore;
     document.getElementById("score").innerText = score + " points";
     if (score === 900) {
@@ -187,4 +189,4 @@ const updateScore = (newScore) => {
     }
 };
 
-export { App, shuffle, updateScore, handleCardClick };
+export { App, shuffle, updateScore, handleCardClick, start };

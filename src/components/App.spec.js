@@ -1,4 +1,4 @@
-import { App, shuffle, updateScore, handleCardClick } from "./App.js";
+import { App, shuffle, updateScore, handleCardClick, start } from "./App.js";
 import { showWinnerMessage, hideWinnerMessage } from "./winner.js";
 import { startTimer, stopTimer, twoDigits, updateCountdown } from "./timer.js";
 
@@ -130,5 +130,13 @@ describe("handleCardClick", () => {
         let cardindex = -1;
         let currentCardIndex = 1;
         expect(cardindex[-1]).toBe(currentCardIndex[1]);
+    });
+});
+
+describe("start", () => {
+    start();
+    document.body.appendChild(App());
+    it("should display PLAY until the buton is clicked", () => {
+        expect(start()).toBe(Function);
     });
 });
