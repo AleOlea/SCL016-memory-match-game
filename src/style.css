@@ -30,6 +30,7 @@
             grid-row-end: 1;
             font-size: 3em;
             color: rgb(240, 232, 10);
+            margin-left: 100px;
         }
         #score {
             display: flex;
@@ -62,16 +63,16 @@
         .memory-cards {
             display: flex;
             order: 0;
-            width: 1500px;
-            height: 1000px;
+            width: 1200px;
+            height: 800px;
             flex-wrap: wrap;
             justify-content: space-between;
             align-content: space-evenly;
             margin: auto;
         }
         card {
-            width: 220px;
-            height: 220px;
+            width: 170px;
+            height: 170px;
             background-image: url("images/ball.png");
             background-size: cover;
             position: relative;
@@ -79,8 +80,8 @@
         }
         .pokecards {
             background-color: whitesmoke;
-            width: 220px;
-            height: 220px;
+            width: 170px;
+            height: 170px;
             border-radius: 50%;
             border: 3px solid black;
             background-size: contain;
@@ -92,8 +93,8 @@
             border-radius: 10%;
             color: black;
             font-family: "Press Start 2P";
-            width: 300px;
-            height: 80px;
+            width: 280px;
+            height: 70px;
             font-size: 2em;
             cursor: pointer;
             align-items: center;
@@ -134,9 +135,9 @@
     /*   ------OJO CAMBIO MEDIA */
     /*   ------OJO CAMBIO MEDIA */
     
-    @media (max-width:700px) {
+    @media screen and (max-width:700px) {
         body {
-            margin: 1%;
+            margin: 0;
             padding: 0;
             height: 100vh;
             width: 100vw;
@@ -146,6 +147,12 @@
             background-size: cover;
             font-family: "Press Start 2P";
             font-size: 10px;
+        }
+        #root {
+            margin: 0%;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
         }
         header {
             display: grid;
@@ -236,7 +243,7 @@
             align-items: center;
             justify-content: center;
             position: absolute;
-            margin-top: 10%;
+            margin-top: 1%;
             margin-left: 39%;
             font-size: 1em;
         }
@@ -269,7 +276,18 @@
     /*   ------OJO CAMBIO MEDIA */
     /*   ------OJO CAMBIO MEDIA */
     
-    @media (min-width:701px) and (max-width:1700px) {
+    @media screen and (min-width:701px) and (max-width:1700px) {
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            box-sizing: border-box;
+            background-image: url("./images/nature.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: "Press Start 2P";
+        }
         header {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -279,6 +297,12 @@
             justify-items: center;
             align-items: center;
             justify-content: center;
+        }
+        #root {
+            margin: 0%;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
         }
         h1 {
             font-size: 26px;
@@ -320,13 +344,12 @@
         .memory-cards {
             display: flex;
             width: 450px;
-            height: 600px;
+            height: 700px;
             flex-wrap: wrap;
             justify-content: space-between;
             align-content: space-evenly;
             margin: auto;
-            margin-bottom: 10%;
-            margin-top: 20px;
+            margin-top: 6%;
         }
         card {
             width: 100px;
@@ -359,8 +382,8 @@
             cursor: pointer;
             align-items: center;
             justify-content: center;
-            position: relative;
-            margin-top: auto;
+            position: auto;
+            margin-top: 3%;
             margin-left: 45%;
         }
         #winner {
