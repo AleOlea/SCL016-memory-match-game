@@ -1,10 +1,10 @@
 import pokemon from "../data/pokemon/pokemon.js";
-import { startTimer, stopTimer } from "../components/timer.js";
+import { startTimer, stopTimer } from "../components/timer.js"; //image url where we get the images for the cards.
 import { showWinnerMessage, hideWinnerMessage } from "../components/winner.js";
 
 //Global Variables
 let dataPokemon = pokemon.items;
-
+//list of the names where every item is doubled.
 const pokeNames = [
     "bulbasaur",
     "ivysaur",
@@ -26,11 +26,11 @@ const pokeNames = [
     "blastoise",
 ];
 
-//Flag set to false.  When the user clicks on play it will be set to true
+//Flag set to false.  When the user clicks on play it will be set to true.
 let gameStarted = false;
 //Keep track card first to be clicked in a pair, when done returns to -1
 let firstCardIndex = -1;
-//List save cards as html elements.
+//List where we save all the cards as html elements which contains the id, background image.
 let cards = [];
 
 let score = 0;
@@ -59,7 +59,7 @@ const App = () => {
         card.className = "pokecards";
         card.id = i;
         card.addEventListener("click", handleCardClick);
-        cards.push(card); //add to list of cards be use later to change each of them
+        cards.push(card); //add to list of cards be use later to change each of them.
         cardsBox.appendChild(card);
         /* console.log(card);*/
     }
@@ -113,37 +113,37 @@ const start = (e) => {
                 let time = stopTimer();
                 showWinnerMessage(time, score);
             }
-        }, 180 * 1000);
+        }, 180 * 1000); //calls a function or evaluates an expression after 180000 milliseconds.
     }
     return start;
 };
 
-//To suffle cards
+// Math.random()A floating-point number between 0 (inclusive) and 1 (exclusive).
 const shuffle = (items) => {
     items.sort(() => Math.random() - 0.5);
 };
-
+//Call everytime we want to reset the game
 const initializeCards = () => {
-    firstCardIndex = -1; //-1 meaans we are not betwen a guess.
-    updateScore(0); //function defined lower in the code.
+    firstCardIndex = -1; //-1 meaans we are not betwen two card that makes a guess, they are not open yet.
+    updateScore(0); //function defined lower in the code. changes the value of the function score to hte new score.
     shuffle(pokeNames);
     pokeNames.forEach((name, index) => {
-        console.log(Math.floor(index / 6), index % 6, name);
-        turnCardBack(cards[index]); //for loop turns all cards back red ball/function defined lower in the code.
+        console.log(Math.floor(index / 6), index % 6, name); //print each of them to the console so is easier to find them.
+        turnCardBack(cards[index]); //for loop turn each of them back to the red ball. Changes the image URL into css style card. the for loop tell them all to go back.
     });
 };
-//Function called everytime we click in a card.
-//First part is cheching if game started is true for cards to be clickable.
+//Function called everytime we click on a card.
+//First part is only cheching if game started is true for cards to be clickable.
 const handleCardClick = (e) => {
     if (gameStarted) {
         //for cards to be clickable
         console.log(e.target.id);
 
-        let currentCardIndex = e.target.id;
+        let currentCardIndex = e.target.id; //temporarely store the index of the card clicked.
         if (matches.includes(pokeNames[currentCardIndex])) {
             return; //should ignore this card becuse has been aleady been matched
         }
-        // happens the "turning" of the card.
+        // happens the "turning" of the card. filter through the data and finds the current id of the item clicked.
         const imageUrl = dataPokemon.find(
             (item) => item.id === pokeNames[currentCardIndex]
         ).image;
@@ -152,7 +152,7 @@ const handleCardClick = (e) => {
 
         //branchig two cases.  dealing with the first card.
         if (firstCardIndex === -1) {
-            firstCardIndex = currentCardIndex; //first card clicked
+            firstCardIndex = currentCardIndex; //first card clicked is the currently clicked card
         } else {
             //dealing with the second card. comparing the names
             if (pokeNames[firstCardIndex] === pokeNames[currentCardIndex]) {
@@ -166,7 +166,7 @@ const handleCardClick = (e) => {
                 setTimeout(function() {
                     turnCardBack(cards[oldFirstCardIndex]);
                     turnCardBack(cards[currentCardIndex]);
-                }, 800);
+                }, 500);
             }
 
             firstCardIndex = -1;

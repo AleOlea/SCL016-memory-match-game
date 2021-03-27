@@ -19,7 +19,7 @@ const updateCountdown = () => {
     const timer = document.getElementById("timer");
 
     time++;
-    const minutes = Math.floor(time / 60);
+    const minutes = Math.floor(time / 60); // function returns the largest integer less than or equal to a given number.
     let seconds = time % 60;
     timer.innerText = `${twoDigits(minutes)}:${twoDigits(seconds)}`;
 };
