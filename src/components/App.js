@@ -35,7 +35,7 @@ let cards = [];
 
 let score = 0;
 
-let matches = [];
+/*let matches = [];*/
 
 //Main functions
 const App = () => {
@@ -113,36 +113,36 @@ const start = (e) => {
                 let time = stopTimer();
                 showWinnerMessage(time, score);
             }
-        }, 180 * 1000); //calls a function or evaluates an expression after 180000 milliseconds.
+        }, 180 * 1000);
     }
-    return start;
+    // return start;
 };
 
-// Math.random()A floating-point number between 0 (inclusive) and 1 (exclusive).
+// 1.
 const shuffle = (items) => {
     items.sort(() => Math.random() - 0.5);
 };
-//Call everytime we want to reset the game
+//2.Call everytime we want to reset the game
 const initializeCards = () => {
-    firstCardIndex = -1; //-1 meaans we are not betwen two card that makes a guess, they are not open yet.
-    updateScore(0); //function defined lower in the code. changes the value of the function score to hte new score.
+    firstCardIndex = -1; //-1 means they are not open yet.
+    updateScore(0); //function defined lower in the code.
     shuffle(pokeNames);
     pokeNames.forEach((name, index) => {
-        console.log(Math.floor(index / 6), index % 6, name); //print each of them to the console so is easier to find them.
-        turnCardBack(cards[index]); //for loop turn each of them back to the red ball. Changes the image URL into css style card. the for loop tell them all to go back.
+        console.log(Math.floor(index / 6), index % 6, name);
+        turnCardBack(cards[index]); //for loop, turn each of them back to the red ball. Changes the image URL into css style card. the for loop tell them all to go back.
     });
 };
 //Function called everytime we click on a card.
-//First part is only cheching if game started is true for cards to be clickable.
+//3.First part is only cheching if game started is true for cards to be clickable.
 const handleCardClick = (e) => {
     if (gameStarted) {
-        //for cards to be clickable
         console.log(e.target.id);
-
         let currentCardIndex = e.target.id; //temporarely store the index of the card clicked.
-        if (matches.includes(pokeNames[currentCardIndex])) {
-            return; //should ignore this card becuse has been aleady been matched
-        }
+
+        // if (matches.includes(pokeNames[currentCardIndex])) {
+        // return; //should ignore this card becuse has been aleady been matched
+        // }
+
         // happens the "turning" of the card. filter through the data and finds the current id of the item clicked.
         const imageUrl = dataPokemon.find(
             (item) => item.id === pokeNames[currentCardIndex]
@@ -157,7 +157,7 @@ const handleCardClick = (e) => {
             //dealing with the second card. comparing the names
             if (pokeNames[firstCardIndex] === pokeNames[currentCardIndex]) {
                 updateScore(score + 100);
-                matches.push(pokeNames[firstCardIndex]);
+                /*matches.push(pokeNames[firstCardIndex]);*/
                 console.log("Score is:", score);
             } else {
                 //turn both cards back
@@ -174,11 +174,12 @@ const handleCardClick = (e) => {
         }
     }
 };
-
+//4. changes the css of the image
 const turnCardBack = (card) => {
     card.style.backgroundImage = `url("images/ball.png")`;
 };
 
+//5.  Updates score, stops timer if score 900 and show winer message
 const updateScore = (newScore) => {
     /*∫console.log("manzana");*/
     score = newScore;
