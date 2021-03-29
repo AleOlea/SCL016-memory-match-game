@@ -1,5 +1,5 @@
 import pokemon from "../data/pokemon/pokemon.js";
-import { startTimer, stopTimer } from "../components/timer.js"; //image url where we get the images for the cards.
+import { startTimer, stopTimer } from "../components/timer.js";
 import { showWinnerMessage, hideWinnerMessage } from "../components/winner.js";
 
 //Global Variables
@@ -61,7 +61,6 @@ const App = () => {
         card.addEventListener("click", handleCardClick);
         cards.push(card); //add to list of cards be use later to change each of them.
         cardsBox.appendChild(card);
-        /* console.log(card);*/
     }
 
     const startGameButton = document.createElement("div");
@@ -73,12 +72,10 @@ const App = () => {
     const scoreGame = document.createElement("div");
     scoreGame.id = "score";
     scoreGame.innerText = "0 points";
-
     header.appendChild(scoreGame);
 
     const timer = document.createElement("div");
     timer.id = "timer";
-
     header.appendChild(timer);
     timer.innerText = "00:00";
 
@@ -118,11 +115,10 @@ const start = (e) => {
     // return start;
 };
 
-// 1.
 const shuffle = (items) => {
     items.sort(() => Math.random() - 0.5);
 };
-//2.Call everytime we want to reset the game
+//Call everytime we want to reset the game
 const initializeCards = () => {
     firstCardIndex = -1; //-1 means they are not open yet.
     updateScore(0); //function defined lower in the code.
@@ -132,8 +128,8 @@ const initializeCards = () => {
         turnCardBack(cards[index]); //for loop, turn each of them back to the red ball. Changes the image URL into css style card. the for loop tell them all to go back.
     });
 };
-//Function called everytime we click on a card.
-//3.First part is only cheching if game started is true for cards to be clickable.
+
+//Function called everytime we click on a card. First part is only cheching if game started is true for cards to be clickable.
 const handleCardClick = (e) => {
     if (gameStarted) {
         console.log(e.target.id);
@@ -174,14 +170,13 @@ const handleCardClick = (e) => {
         }
     }
 };
-//4. changes the css of the image
+//Changes the css of the image
 const turnCardBack = (card) => {
     card.style.backgroundImage = `url("images/ball.png")`;
 };
 
-//5.  Updates score, stops timer if score 900 and show winer message
+// Updates score, stops timer if score 900 and show winer message
 const updateScore = (newScore) => {
-    /*∫console.log("manzana");*/
     score = newScore;
     document.getElementById("score").innerText = score + " points";
     if (score === 900) {
